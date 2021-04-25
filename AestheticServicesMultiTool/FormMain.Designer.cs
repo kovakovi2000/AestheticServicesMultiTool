@@ -137,7 +137,7 @@
             this.btn_tab_SkillCheck.FlatAppearance.BorderSize = 0;
             this.btn_tab_SkillCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_tab_SkillCheck.Font = new System.Drawing.Font("Impact", 20.25F);
-            this.btn_tab_SkillCheck.ForeColor = System.Drawing.Color.White;
+            this.btn_tab_SkillCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_tab_SkillCheck.Location = new System.Drawing.Point(0, 0);
             this.btn_tab_SkillCheck.Name = "btn_tab_SkillCheck";
             this.btn_tab_SkillCheck.Size = new System.Drawing.Size(308, 64);
