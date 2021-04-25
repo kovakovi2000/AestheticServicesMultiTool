@@ -1,6 +1,6 @@
 ﻿namespace AestheticServicesMultiTool
 {
-    partial class Form1
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.btn_Login = new AltoControls.AltoButton();
             this.panel_grab = new System.Windows.Forms.Panel();
             this.btn_Minimalize = new AltoControls.AltoButton();
@@ -39,6 +39,8 @@
             this.tb_Username = new System.Windows.Forms.TextBox();
             this.tb_Password = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tmr_Rotator = new System.Windows.Forms.Timer(this.components);
+            this.lbl_ErrorOutput = new System.Windows.Forms.Label();
             this.panel_grab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +55,7 @@
             this.btn_Login.ForeColor = System.Drawing.Color.White;
             this.btn_Login.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
             this.btn_Login.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
-            this.btn_Login.Location = new System.Drawing.Point(74, 346);
+            this.btn_Login.Location = new System.Drawing.Point(74, 361);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Radius = 15;
             this.btn_Login.Size = new System.Drawing.Size(180, 33);
@@ -121,7 +123,7 @@
             // 
             // altoSlidingLabel1
             // 
-            this.altoSlidingLabel1.Location = new System.Drawing.Point(0, 385);
+            this.altoSlidingLabel1.Location = new System.Drawing.Point(0, 400);
             this.altoSlidingLabel1.Name = "altoSlidingLabel1";
             this.altoSlidingLabel1.Size = new System.Drawing.Size(330, 15);
             this.altoSlidingLabel1.Slide = true;
@@ -167,7 +169,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::AestheticServicesMultiTool.Properties.Resources.AC_Neon_Logo_png_3_rak;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(74, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 180);
@@ -175,14 +177,28 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // tmr_Rotator
+            // 
+            this.tmr_Rotator.Interval = 1;
+            this.tmr_Rotator.Tick += new System.EventHandler(this.tmr_Rotator_Tick);
+            // 
+            // lbl_ErrorOutput
+            // 
+            this.lbl_ErrorOutput.AutoSize = true;
+            this.lbl_ErrorOutput.ForeColor = System.Drawing.Color.Red;
+            this.lbl_ErrorOutput.Location = new System.Drawing.Point(24, 342);
+            this.lbl_ErrorOutput.Name = "lbl_ErrorOutput";
+            this.lbl_ErrorOutput.Size = new System.Drawing.Size(0, 13);
+            this.lbl_ErrorOutput.TabIndex = 7;
+            // 
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(330, 400);
+            this.ClientSize = new System.Drawing.Size(330, 415);
+            this.Controls.Add(this.lbl_ErrorOutput);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tb_Password);
             this.Controls.Add(this.tb_Username);
@@ -192,7 +208,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FormLogin";
             this.Text = "MainFrom";
             this.panel_grab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -208,10 +224,12 @@
         private AltoControls.AltoButton btn_Close;
         private AltoControls.AltoButton btn_Minimalize;
         private AltoControls.AltoSlidingLabel altoSlidingLabel1;
-        private System.Windows.Forms.NotifyIcon NotyIcon;
         private System.Windows.Forms.TextBox tb_Username;
         private System.Windows.Forms.TextBox tb_Password;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer tmr_Rotator;
+        private System.Windows.Forms.Label lbl_ErrorOutput;
+        public System.Windows.Forms.NotifyIcon NotyIcon;
     }
 }
 
