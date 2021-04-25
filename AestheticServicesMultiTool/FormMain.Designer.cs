@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.pcb_Selected = new System.Windows.Forms.PictureBox();
             this.pnl_grab = new System.Windows.Forms.Panel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.btn_Minimalize = new AltoControls.AltoButton();
             this.btn_Close = new AltoControls.AltoButton();
             this.btn_tab_SkillCheck = new System.Windows.Forms.Button();
@@ -51,11 +53,13 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pnl_tabs = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.lbl_Tittle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Selected)).BeginInit();
             this.pnl_grab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -79,6 +83,8 @@
             // pnl_grab
             // 
             this.pnl_grab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.pnl_grab.Controls.Add(this.pictureBox10);
+            this.pnl_grab.Controls.Add(this.pictureBox9);
             this.pnl_grab.Controls.Add(this.btn_Minimalize);
             this.pnl_grab.Controls.Add(this.btn_Close);
             this.pnl_grab.Dock = System.Windows.Forms.DockStyle.Top;
@@ -89,6 +95,26 @@
             this.pnl_grab.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseDown);
             this.pnl_grab.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseMove);
             this.pnl_grab.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseUp);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::AestheticServicesMultiTool.Properties.Resources.coollogo_com_32572470;
+            this.pictureBox10.Location = new System.Drawing.Point(43, -6);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(459, 50);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 7;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::AestheticServicesMultiTool.Properties.Resources.AC_Neon_Logo_png_3_rak;
+            this.pictureBox9.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(36, 36);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 6;
+            this.pictureBox9.TabStop = false;
             // 
             // btn_Minimalize
             // 
@@ -366,6 +392,14 @@
             this.pnl_tabs.Size = new System.Drawing.Size(308, 504);
             this.pnl_tabs.TabIndex = 1;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel1.Location = new System.Drawing.Point(298, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 504);
+            this.panel1.TabIndex = 2;
+            // 
             // pnl_Main
             // 
             this.pnl_Main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -385,14 +419,6 @@
             this.lbl_Tittle.TabIndex = 0;
             this.lbl_Tittle.Text = "SkillCheckBot";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.panel1.Location = new System.Drawing.Point(298, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 504);
-            this.panel1.TabIndex = 2;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,10 +430,13 @@
             this.Controls.Add(this.pnl_grab);
             this.Controls.Add(this.pnl_tabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.Text = "FormMain";
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Selected)).EndInit();
             this.pnl_grab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -448,5 +477,7 @@
         private System.Windows.Forms.Panel pnl_Main;
         private System.Windows.Forms.Label lbl_Tittle;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }

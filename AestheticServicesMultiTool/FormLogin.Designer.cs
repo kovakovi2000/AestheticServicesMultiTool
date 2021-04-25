@@ -136,7 +136,6 @@
             // 
             this.NotyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotyIcon.Icon")));
             this.NotyIcon.Text = "Aesthetic Services";
-            this.NotyIcon.Visible = true;
             this.NotyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Icon_MouseClick);
             // 
             // tb_Username

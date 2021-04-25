@@ -93,6 +93,16 @@ namespace AestheticServicesMultiTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coollogo_com_32572470 {
+            get {
+                object obj = ResourceManager.GetObject("coollogo_com-32572470", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconBloodPoint {
             get {
                 object obj = ResourceManager.GetObject("IconBloodPoint", resourceCulture);

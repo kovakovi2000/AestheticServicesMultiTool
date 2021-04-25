@@ -130,5 +130,8 @@
   <ItemGroup>
     <None Include="Resources\IconCookieGrabber.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coollogo_com-32572470.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

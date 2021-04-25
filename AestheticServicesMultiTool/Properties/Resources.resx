@@ -118,29 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SkillCheckIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SkillCheckIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AC_Neon_Logo_png_3_rak" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AC_Neon_Logo.png_3_rak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="appBackGroundDesign" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appBackGroundDesign.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AppIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AC_Neon_Logo.png_3_rak.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconBloodPoint" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconBloodPoint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="IconFiddler" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconFiddler.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconJesusConfig" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconJesusConfig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconRankChanger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconRankChanger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SkillCheckIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SkillCheckIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AppIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AC_Neon_Logo.png_3_rak.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconSSLByPass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconSSLByPass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconBloodPoint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconBloodPoint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AC_Neon_Logo_png_3_rak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AC_Neon_Logo.png_3_rak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconSaveInjector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconSaveInjector.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,10 +145,16 @@
   <data name="IconSkillCheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconSkillCheck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconSSLByPass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconSSLByPass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconRankChanger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconRankChanger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconCookieGrabber" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconCookieGrabber.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appBackGroundDesign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appBackGroundDesign.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coollogo_com-32572470" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coollogo_com-32572470.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

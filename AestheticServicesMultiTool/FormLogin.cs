@@ -22,6 +22,8 @@ namespace AestheticServicesMultiTool
         private string _pass = "";
         private string _user = "";
 
+        private bool Logined = false;
+
         FormMain fmain;
 
         public FormLogin()
@@ -41,7 +43,14 @@ namespace AestheticServicesMultiTool
         void Show(object sender, EventArgs e)
         {
             NotyIcon.Visible = false;
-            this.Visible = true;
+            if (Logined)
+            {
+                fmain.Show();
+                Hide();
+            }
+            else
+                Show();
+
         }
 
         void Exit(object sender, EventArgs e)
@@ -173,6 +182,7 @@ namespace AestheticServicesMultiTool
                 SafelyCallMeFromAnyThread(new Action(() => 
                 {
                     fmain = new FormMain(this);
+                    Logined = true;
                     fmain.Show();
                     this.Hide();
                 }));
