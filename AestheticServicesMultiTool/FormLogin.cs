@@ -279,5 +279,13 @@ namespace AestheticServicesMultiTool
             g.DrawImage(b, 0, 0, b.Width, b.Height);  //My Final Solution :3
             return returnBitmap;
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            fmain = new FormMain(this);
+            Logined = true;
+            fmain.Show();
+            this.Hide();
+        }
     }
 }

@@ -209,6 +209,7 @@
             this.MaximizeBox = false;
             this.Name = "FormLogin";
             this.Text = "MainFrom";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel_grab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
