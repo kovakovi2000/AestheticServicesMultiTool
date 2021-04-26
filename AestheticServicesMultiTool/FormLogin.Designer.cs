@@ -52,7 +52,7 @@
             this.btn_Login.BackColor = System.Drawing.Color.Transparent;
             this.btn_Login.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn_Login.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_Login.ForeColor = System.Drawing.Color.White;
+            this.btn_Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.btn_Login.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
             this.btn_Login.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
             this.btn_Login.Location = new System.Drawing.Point(74, 361);
