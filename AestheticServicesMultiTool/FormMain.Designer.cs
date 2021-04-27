@@ -59,8 +59,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tbar_scb_refreshrate = new System.Windows.Forms.TrackBar();
             this.picbox_scb_showpic = new System.Windows.Forms.PictureBox();
-            this.lbl_sldbtn_scb_overlay = new System.Windows.Forms.Label();
-            this.sldbtn_scb_overlay = new AltoControls.SlideButton();
             this.lbl_sldbtn_scb_showpicture = new System.Windows.Forms.Label();
             this.sldbtn_scb_showpicture = new AltoControls.SlideButton();
             this.lbl_scb_refreshrate = new System.Windows.Forms.Label();
@@ -69,7 +67,11 @@
             this.lbl_sldbtn_scb_Enable = new System.Windows.Forms.Label();
             this.sldbtn_scb_Enable = new AltoControls.SlideButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tb_cg_cookie = new System.Windows.Forms.TextBox();
+            this.btn_cg_grab = new AltoControls.AltoButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lbl_sldbtn_fm_Enable = new System.Windows.Forms.Label();
+            this.sldbtn_fm_Enable = new AltoControls.SlideButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -94,6 +96,8 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbar_scb_refreshrate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_scb_showpic)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pcb_Selected
@@ -115,7 +119,7 @@
             this.pnl_grab.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_grab.Location = new System.Drawing.Point(0, 0);
             this.pnl_grab.Name = "pnl_grab";
-            this.pnl_grab.Size = new System.Drawing.Size(1097, 38);
+            this.pnl_grab.Size = new System.Drawing.Size(675, 38);
             this.pnl_grab.TabIndex = 0;
             this.pnl_grab.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseDown);
             this.pnl_grab.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseMove);
@@ -157,7 +161,7 @@
             this.btn_Minimalize.ForeColor = System.Drawing.Color.Black;
             this.btn_Minimalize.Inactive1 = System.Drawing.Color.Silver;
             this.btn_Minimalize.Inactive2 = System.Drawing.Color.Gray;
-            this.btn_Minimalize.Location = new System.Drawing.Point(1028, 3);
+            this.btn_Minimalize.Location = new System.Drawing.Point(602, 5);
             this.btn_Minimalize.Name = "btn_Minimalize";
             this.btn_Minimalize.Radius = 10;
             this.btn_Minimalize.Size = new System.Drawing.Size(30, 30);
@@ -178,7 +182,7 @@
             this.btn_Close.ForeColor = System.Drawing.Color.Black;
             this.btn_Close.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Close.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_Close.Location = new System.Drawing.Point(1064, 3);
+            this.btn_Close.Location = new System.Drawing.Point(638, 5);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Radius = 10;
             this.btn_Close.Size = new System.Drawing.Size(30, 30);
@@ -437,7 +441,7 @@
             this.pnl_Main.Controls.Add(this.tabCtrl);
             this.pnl_Main.Location = new System.Drawing.Point(314, 80);
             this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(771, 450);
+            this.pnl_Main.Size = new System.Drawing.Size(349, 450);
             this.pnl_Main.TabIndex = 2;
             // 
             // tabCtrl
@@ -453,7 +457,7 @@
             this.tabCtrl.Location = new System.Drawing.Point(-16, -30);
             this.tabCtrl.Name = "tabCtrl";
             this.tabCtrl.SelectedIndex = 0;
-            this.tabCtrl.Size = new System.Drawing.Size(799, 493);
+            this.tabCtrl.Size = new System.Drawing.Size(377, 493);
             this.tabCtrl.TabIndex = 1;
             // 
             // tabPage1
@@ -461,8 +465,6 @@
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.tabPage1.Controls.Add(this.tbar_scb_refreshrate);
             this.tabPage1.Controls.Add(this.picbox_scb_showpic);
-            this.tabPage1.Controls.Add(this.lbl_sldbtn_scb_overlay);
-            this.tabPage1.Controls.Add(this.sldbtn_scb_overlay);
             this.tabPage1.Controls.Add(this.lbl_sldbtn_scb_showpicture);
             this.tabPage1.Controls.Add(this.sldbtn_scb_showpicture);
             this.tabPage1.Controls.Add(this.lbl_scb_refreshrate);
@@ -473,16 +475,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(791, 467);
+            this.tabPage1.Size = new System.Drawing.Size(369, 467);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             // 
             // tbar_scb_refreshrate
             // 
-            this.tbar_scb_refreshrate.Location = new System.Drawing.Point(12, 74);
+            this.tbar_scb_refreshrate.Location = new System.Drawing.Point(18, 407);
             this.tbar_scb_refreshrate.Maximum = 60;
             this.tbar_scb_refreshrate.Name = "tbar_scb_refreshrate";
-            this.tbar_scb_refreshrate.Size = new System.Drawing.Size(417, 45);
+            this.tbar_scb_refreshrate.Size = new System.Drawing.Size(327, 45);
             this.tbar_scb_refreshrate.TabIndex = 3;
             this.tbar_scb_refreshrate.Value = 60;
             this.tbar_scb_refreshrate.Scroll += new System.EventHandler(this.tbar_scb_refreshrate_Scroll);
@@ -490,42 +492,18 @@
             // picbox_scb_showpic
             // 
             this.picbox_scb_showpic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picbox_scb_showpic.Location = new System.Drawing.Point(435, 43);
+            this.picbox_scb_showpic.Location = new System.Drawing.Point(15, 118);
             this.picbox_scb_showpic.Name = "picbox_scb_showpic";
             this.picbox_scb_showpic.Size = new System.Drawing.Size(140, 140);
             this.picbox_scb_showpic.TabIndex = 2;
             this.picbox_scb_showpic.TabStop = false;
-            // 
-            // lbl_sldbtn_scb_overlay
-            // 
-            this.lbl_sldbtn_scb_overlay.AutoSize = true;
-            this.lbl_sldbtn_scb_overlay.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbl_sldbtn_scb_overlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.lbl_sldbtn_scb_overlay.Location = new System.Drawing.Point(335, 17);
-            this.lbl_sldbtn_scb_overlay.Name = "lbl_sldbtn_scb_overlay";
-            this.lbl_sldbtn_scb_overlay.Size = new System.Drawing.Size(59, 20);
-            this.lbl_sldbtn_scb_overlay.TabIndex = 1;
-            this.lbl_sldbtn_scb_overlay.Text = "Overlay";
-            // 
-            // sldbtn_scb_overlay
-            // 
-            this.sldbtn_scb_overlay.BorderColor = System.Drawing.Color.LightGray;
-            this.sldbtn_scb_overlay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sldbtn_scb_overlay.IsOn = false;
-            this.sldbtn_scb_overlay.Location = new System.Drawing.Point(293, 17);
-            this.sldbtn_scb_overlay.Name = "sldbtn_scb_overlay";
-            this.sldbtn_scb_overlay.Size = new System.Drawing.Size(36, 20);
-            this.sldbtn_scb_overlay.TabIndex = 0;
-            this.sldbtn_scb_overlay.Text = "slideButton1";
-            this.sldbtn_scb_overlay.TextEnabled = true;
-            this.sldbtn_scb_overlay.Click += new System.EventHandler(this.sldbtn_scb_overlay_Click);
             // 
             // lbl_sldbtn_scb_showpicture
             // 
             this.lbl_sldbtn_scb_showpicture.AutoSize = true;
             this.lbl_sldbtn_scb_showpicture.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbl_sldbtn_scb_showpicture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.lbl_sldbtn_scb_showpicture.Location = new System.Drawing.Point(480, 17);
+            this.lbl_sldbtn_scb_showpicture.Location = new System.Drawing.Point(60, 92);
             this.lbl_sldbtn_scb_showpicture.Name = "lbl_sldbtn_scb_showpicture";
             this.lbl_sldbtn_scb_showpicture.Size = new System.Drawing.Size(90, 20);
             this.lbl_sldbtn_scb_showpicture.TabIndex = 1;
@@ -536,7 +514,7 @@
             this.sldbtn_scb_showpicture.BorderColor = System.Drawing.Color.LightGray;
             this.sldbtn_scb_showpicture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sldbtn_scb_showpicture.IsOn = false;
-            this.sldbtn_scb_showpicture.Location = new System.Drawing.Point(438, 17);
+            this.sldbtn_scb_showpicture.Location = new System.Drawing.Point(18, 92);
             this.sldbtn_scb_showpicture.Name = "sldbtn_scb_showpicture";
             this.sldbtn_scb_showpicture.Size = new System.Drawing.Size(36, 20);
             this.sldbtn_scb_showpicture.TabIndex = 0;
@@ -549,7 +527,7 @@
             this.lbl_scb_refreshrate.AutoSize = true;
             this.lbl_scb_refreshrate.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbl_scb_refreshrate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.lbl_scb_refreshrate.Location = new System.Drawing.Point(15, 55);
+            this.lbl_scb_refreshrate.Location = new System.Drawing.Point(22, 384);
             this.lbl_scb_refreshrate.Name = "lbl_scb_refreshrate";
             this.lbl_scb_refreshrate.Size = new System.Drawing.Size(178, 20);
             this.lbl_scb_refreshrate.TabIndex = 1;
@@ -560,7 +538,7 @@
             this.lbl_sldbtn_scb_humanize.AutoSize = true;
             this.lbl_sldbtn_scb_humanize.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbl_sldbtn_scb_humanize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.lbl_sldbtn_scb_humanize.Location = new System.Drawing.Point(180, 17);
+            this.lbl_sldbtn_scb_humanize.Location = new System.Drawing.Point(60, 55);
             this.lbl_sldbtn_scb_humanize.Name = "lbl_sldbtn_scb_humanize";
             this.lbl_sldbtn_scb_humanize.Size = new System.Drawing.Size(72, 20);
             this.lbl_sldbtn_scb_humanize.TabIndex = 1;
@@ -571,7 +549,7 @@
             this.sldbtn_scb_humanize.BorderColor = System.Drawing.Color.LightGray;
             this.sldbtn_scb_humanize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sldbtn_scb_humanize.IsOn = true;
-            this.sldbtn_scb_humanize.Location = new System.Drawing.Point(138, 17);
+            this.sldbtn_scb_humanize.Location = new System.Drawing.Point(18, 55);
             this.sldbtn_scb_humanize.Name = "sldbtn_scb_humanize";
             this.sldbtn_scb_humanize.Size = new System.Drawing.Size(36, 20);
             this.sldbtn_scb_humanize.TabIndex = 0;
@@ -606,22 +584,82 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage2.Controls.Add(this.tb_cg_cookie);
+            this.tabPage2.Controls.Add(this.btn_cg_grab);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(791, 467);
+            this.tabPage2.Size = new System.Drawing.Size(369, 467);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
+            // 
+            // tb_cg_cookie
+            // 
+            this.tb_cg_cookie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_cg_cookie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_cg_cookie.Location = new System.Drawing.Point(28, 66);
+            this.tb_cg_cookie.Multiline = true;
+            this.tb_cg_cookie.Name = "tb_cg_cookie";
+            this.tb_cg_cookie.ReadOnly = true;
+            this.tb_cg_cookie.Size = new System.Drawing.Size(317, 377);
+            this.tb_cg_cookie.TabIndex = 2;
+            // 
+            // btn_cg_grab
+            // 
+            this.btn_cg_grab.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
+            this.btn_cg_grab.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
+            this.btn_cg_grab.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cg_grab.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_cg_grab.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_cg_grab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btn_cg_grab.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
+            this.btn_cg_grab.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            this.btn_cg_grab.Location = new System.Drawing.Point(28, 19);
+            this.btn_cg_grab.Name = "btn_cg_grab";
+            this.btn_cg_grab.Radius = 15;
+            this.btn_cg_grab.Size = new System.Drawing.Size(317, 33);
+            this.btn_cg_grab.Stroke = false;
+            this.btn_cg_grab.StrokeColor = System.Drawing.Color.Gray;
+            this.btn_cg_grab.TabIndex = 1;
+            this.btn_cg_grab.Text = "Grab";
+            this.btn_cg_grab.Transparency = false;
+            this.btn_cg_grab.Click += new System.EventHandler(this.btn_cg_grab_Click);
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage3.Controls.Add(this.lbl_sldbtn_fm_Enable);
+            this.tabPage3.Controls.Add(this.sldbtn_fm_Enable);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(791, 467);
+            this.tabPage3.Size = new System.Drawing.Size(369, 467);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
+            // 
+            // lbl_sldbtn_fm_Enable
+            // 
+            this.lbl_sldbtn_fm_Enable.AutoSize = true;
+            this.lbl_sldbtn_fm_Enable.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbl_sldbtn_fm_Enable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.lbl_sldbtn_fm_Enable.Location = new System.Drawing.Point(77, 18);
+            this.lbl_sldbtn_fm_Enable.Name = "lbl_sldbtn_fm_Enable";
+            this.lbl_sldbtn_fm_Enable.Size = new System.Drawing.Size(89, 34);
+            this.lbl_sldbtn_fm_Enable.TabIndex = 3;
+            this.lbl_sldbtn_fm_Enable.Text = "Enable";
+            // 
+            // sldbtn_fm_Enable
+            // 
+            this.sldbtn_fm_Enable.BorderColor = System.Drawing.Color.LightGray;
+            this.sldbtn_fm_Enable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sldbtn_fm_Enable.IsOn = false;
+            this.sldbtn_fm_Enable.Location = new System.Drawing.Point(18, 20);
+            this.sldbtn_fm_Enable.Name = "sldbtn_fm_Enable";
+            this.sldbtn_fm_Enable.Size = new System.Drawing.Size(54, 29);
+            this.sldbtn_fm_Enable.TabIndex = 2;
+            this.sldbtn_fm_Enable.Text = "slideButton1";
+            this.sldbtn_fm_Enable.TextEnabled = true;
+            this.sldbtn_fm_Enable.Click += new System.EventHandler(this.sldbtn_fm_Enable_Click);
             // 
             // tabPage4
             // 
@@ -629,7 +667,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(791, 467);
+            this.tabPage4.Size = new System.Drawing.Size(369, 467);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             // 
@@ -639,7 +677,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(791, 467);
+            this.tabPage5.Size = new System.Drawing.Size(369, 467);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             // 
@@ -649,7 +687,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(791, 467);
+            this.tabPage6.Size = new System.Drawing.Size(369, 467);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
             // 
@@ -659,7 +697,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(791, 467);
+            this.tabPage7.Size = new System.Drawing.Size(369, 467);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "tabPage7";
             // 
@@ -669,7 +707,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(791, 467);
+            this.tabPage8.Size = new System.Drawing.Size(369, 467);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "tabPage8";
             // 
@@ -689,7 +727,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1097, 542);
+            this.ClientSize = new System.Drawing.Size(675, 542);
             this.Controls.Add(this.lbl_Tittle);
             this.Controls.Add(this.pnl_Main);
             this.Controls.Add(this.pnl_grab);
@@ -718,6 +756,10 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbar_scb_refreshrate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_scb_showpic)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -762,8 +804,6 @@
         private System.Windows.Forms.TabPage tabPage8;
         private AltoControls.SlideButton sldbtn_scb_Enable;
         private System.Windows.Forms.PictureBox picbox_scb_showpic;
-        private System.Windows.Forms.Label lbl_sldbtn_scb_overlay;
-        private AltoControls.SlideButton sldbtn_scb_overlay;
         private System.Windows.Forms.Label lbl_sldbtn_scb_showpicture;
         private AltoControls.SlideButton sldbtn_scb_showpicture;
         private System.Windows.Forms.Label lbl_sldbtn_scb_humanize;
@@ -771,5 +811,9 @@
         private System.Windows.Forms.Label lbl_sldbtn_scb_Enable;
         private System.Windows.Forms.TrackBar tbar_scb_refreshrate;
         private System.Windows.Forms.Label lbl_scb_refreshrate;
+        private System.Windows.Forms.TextBox tb_cg_cookie;
+        private AltoControls.AltoButton btn_cg_grab;
+        private System.Windows.Forms.Label lbl_sldbtn_fm_Enable;
+        private AltoControls.SlideButton sldbtn_fm_Enable;
     }
 }

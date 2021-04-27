@@ -149,5 +149,16 @@ namespace AestheticServicesMultiTool
             SetSliderText((AltoControls.SlideButton)sender);
             SkillCheckBot.BShowPic = ((AltoControls.SlideButton)sender).IsOn;
         }
+
+        private void btn_cg_grab_Click(object sender, EventArgs e)
+        {
+            tb_cg_cookie.Text = CookieGrab.Grab();
+        }
+
+        private void sldbtn_fm_Enable_Click(object sender, EventArgs e)
+        {
+            SetSliderText((AltoControls.SlideButton)sender);
+            FiddlerMarket.Enable(((AltoControls.SlideButton)sender).IsOn);
+        }
     }
 }

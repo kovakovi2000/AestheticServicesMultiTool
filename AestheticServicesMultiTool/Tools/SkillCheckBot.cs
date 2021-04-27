@@ -15,14 +15,13 @@ namespace AestheticServicesMultiTool.Tools
     {
         private static Color[,] SubImage;
         public static Color SaveWhite = Color.FromArgb(247, 247, 247);
-        private static Form OverLay = new Form();
-        private static Bitmap olRed;
-        private static Bitmap olBlue;
-        private static Bitmap olGreen;
+        //private static Form OverLay = new Form();
+        //private static Bitmap olRed;
+        //private static Bitmap olBlue;
+        //private static Bitmap olGreen;
 
         private static InputSimulator InSim = new InputSimulator();
         private static Random rnd = new Random();
-        private static bool WaitingForSkillCheck = false;
 
         public static int iRefreshRate = 60;
 
@@ -63,77 +62,29 @@ namespace AestheticServicesMultiTool.Tools
         {
             tmr_fa.Tick += new EventHandler(RefreshTick);
             SubImage = RGBABytesToColorArray(GetRGBABytes(Resources.SkillSubImage));
-
-            olRed = new Bitmap(142,142);
-            GiveImageBorder(ref olRed, Color.Red);
-            olBlue = new Bitmap(142, 142);
-            GiveImageBorder(ref olBlue, Color.Blue);
-            olGreen = new Bitmap(142, 142);
-            GiveImageBorder(ref olGreen, Color.Lime);
-
-            OverLay.FormBorderStyle = FormBorderStyle.None;
-            OverLay.Size = new Size(142,142);
-            OverLay.TopMost = true;
-            OverLay.TransparencyKey = Color.Yellow;
-            OverLay.BackColor = Color.Yellow;
-            OverLay.BackgroundImage = olRed;
-            PictureBox picbox_lay = new PictureBox();
-            picbox_lay.Size = new Size(6, 6);
-            picbox_lay.Visible = false;
-            Bitmap lay = new Bitmap(6, 6);
-            GiveImageBorder(ref lay, Color.Purple);
-            picbox_lay.Image = lay;
-            picbox_lay.Name = "piclay";
-            OverLay.Controls.Add(picbox_lay);
-            Console.WriteLine(OverLay.Controls[0].Name);
-            OverLay.Show();
-            OverLay.Location = new Point(890, 469);
         }
 
-        private static void GiveImageBorder(ref Bitmap bmp, Color color)
-        {
-            for (int x = 0; x < bmp.Width; x++)
-            {
-                bmp.SetPixel(x, 0, color);
-                bmp.SetPixel(x, bmp.Height - 1, color);
-            }
-
-            for (int y = 0; y < bmp.Height; y++)
-            {
-                bmp.SetPixel(0, y, color);
-                bmp.SetPixel(bmp.Width - 1, y, color);
-            }
-        }
-
+        private static bool WaitingForSkillCheck = false;
+        private static Point SkillCheck = new Point(0, 0);
         private static void RefreshTick(object sender, EventArgs e)
         {
             Bitmap bitmap = capturearea(140, 140, 891, 470);
-            Color[,] ColorArray = RGBAMask(RGBABytesToColorArray(GetRGBABytes(bitmap)), SubImage);
+            Color[,] ColorArray = GetColorArray(bitmap);
 
-            if (!IsSkillcheck(ColorArray))
+            if (!WaitingForSkillCheck && 
+                IsSkillcheck(ref ColorArray) &&
+                (SkillCheck = GetSkillCheck(ref ColorArray)) != new Point(0, 0))
             {
-                OverLay.BackgroundImage = olRed;
-                OverLay.Controls[0].Visible = false;
-                WaitingForSkillCheck = false;
-                return;
-            }
-            OverLay.BackgroundImage = olBlue;
-            Point SkillPoint = GetSkillCheck(ColorArray);
-            if (SkillPoint != new Point(0, 0))
-            {
-                OverLay.Controls[0].Visible = true;
-                OverLay.Controls[0].Location = new Point(SkillPoint.X - 891, SkillPoint.Y - 470);
                 WaitingForSkillCheck = true;
+                Console.WriteLine(SkillCheck.ToString());
                 return;
             }
-            if (WaitingForSkillCheck)
+            if (WaitingForSkillCheck && !IsBright(ColorArray[SkillCheck.X, SkillCheck.Y], 250))
             {
                 if (bHumanize)
-                {
                     Thread.Sleep(rnd.Next(50));
-                }
+
                 InSim.Keyboard.KeyDown(VirtualKeyCode.SPACE);
-                OverLay.BackgroundImage = olGreen;
                 Thread.Sleep((rnd.Next(10) != 1) ? (50 + rnd.Next(50)) : (60 + rnd.Next(60)));
                 InSim.Keyboard.KeyUp(VirtualKeyCode.SPACE);
                 if (bShowPic)
@@ -141,12 +92,37 @@ namespace AestheticServicesMultiTool.Tools
                     picbox_showpic.Image = bitmap;
                 }
                 WaitingForSkillCheck = false;
-                OverLay.Controls[0].Visible = false;
                 Thread.Sleep(500);
             }
         }
 
-        private static bool IsSkillcheck(Color[,] colorArray)
+        private static Color[,] GetColorArray(Bitmap bmp)
+        {
+            Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            BitmapData bitmapData = bmp.LockBits(rect, ImageLockMode.ReadWrite, bmp.PixelFormat);
+            bmp.UnlockBits(bitmapData);
+            IntPtr scan = bitmapData.Scan0;
+            int abs = Math.Abs(bitmapData.Stride) * bmp.Height;
+            byte[] rgbValues = new byte[abs];
+            Marshal.Copy(scan, rgbValues, 0, abs);
+            Color[,] array = new Color[140, 140];
+            int x = 0;
+            int y = 0;
+            for (int i = 0; i < rgbValues.Length; i += 4)
+            {
+                int avg = (rgbValues[i] + rgbValues[i + 1] + rgbValues[i + 2]) / 3;
+                array[x, y] = SubImage[x, y].A != 255 ? Color.FromArgb(rgbValues[i + 3], rgbValues[i + 2], avg, avg) : Color.FromArgb(0,0,0,0);
+                x++;
+                if (x == 140)
+                {
+                    x = 0;
+                    y++;
+                }
+            }
+            return array;
+        }
+
+        private static bool IsSkillcheck(ref Color[,] colorArray)
         {
             if (
                     RGBSimularColor(colorArray[22, 59], Color.FromArgb(255, 237, 238, 238), 1) &&
@@ -204,7 +180,7 @@ namespace AestheticServicesMultiTool.Tools
             return output;
         }
 
-        private static Bitmap ARBAtoBitmap(Color[,] image)
+        private static Bitmap AGBtoBitmap(Color[,] image)
         {
             Bitmap bitmap = new Bitmap(image.GetLength(0), image.GetLength(1));
             for (int x = 0; x < image.GetLength(0); x++)
@@ -217,12 +193,12 @@ namespace AestheticServicesMultiTool.Tools
             return bitmap;
         }
 
-        private static Point GetSkillCheck(Color[,] ColorArray)
+        private static Point GetSkillCheck(ref Color[,] ColorArray)
         {
             for (int i = 0; i < 136; i++)
                 for (int j = 0; j < 136; j++)
                     if (IsBright(ColorArray[i, j], 250) && IsBright(ColorArray[i + 4, j], 250) && IsBright(ColorArray[i, j + 4], 250) && IsBright(ColorArray[i + 4, j + 4], 250))
-                        return new Point(891 + i, 470 + j);
+                        return new Point(i+3, j+3);
             return new Point(0, 0);
         }
 

@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -279,13 +281,38 @@ namespace AestheticServicesMultiTool
             g.DrawImage(b, 0, 0, b.Width, b.Height);  //My Final Solution :3
             return returnBitmap;
         }
-
+        
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            MessageBox.Show(GetHWIDsCheckLink());
             fmain = new FormMain(this);
             Logined = true;
             fmain.Show();
             this.Hide();
         }
+
+private static string GetHWIDsCheckLink()
+{
+    string ret = "https://example.com/whid?proc=";
+    foreach (ManagementObject mo in new ManagementObjectSearcher("Select * From Win32_processor").Get())
+        ret += mo["ProcessorID"].ToString();
+
+    ManagementObject dsk = new ManagementObject(@"win32_logicaldisk.deviceid=""c:""");
+    dsk.Get();
+    ret += $"&disk={dsk["VolumeSerialNumber"].ToString()}&mboard=";
+
+    foreach (ManagementObject mo in new ManagementObjectSearcher("SELECT * FROM Win32_BaseBoard").Get())
+        ret += (string)mo["SerialNumber"];
+            
+    return ret;
+}
+
+void MainThread()
+{
+    if (new WebClient().DownloadString(GetHWIDsCheckLink()).Equals("0"))
+    {
+        //somehow break the game like 'while(true){}'
+    }
+}
     }
 }
