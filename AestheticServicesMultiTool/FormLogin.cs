@@ -23,6 +23,7 @@ namespace AestheticServicesMultiTool
         private int movY;
         private string _pass = "";
         private string _user = "";
+        private string UserRegex = @"^[A-Za-z0-9_.\-]+$";
 
         private bool Logined = false;
 
@@ -36,26 +37,26 @@ namespace AestheticServicesMultiTool
             NotyIcon.ContextMenu = new ContextMenu(
                         new MenuItem[]
                         {
-                            new MenuItem("Show", Show),
+                            new MenuItem("Show", iShow),
                             new MenuItem("-"),
-                            new MenuItem("Exit", Exit)
+                            new MenuItem("Exit", iExit)
                         });
         }
 
-        void Show(object sender, EventArgs e)
+        private void iShow(object sender, EventArgs e)
         {
             NotyIcon.Visible = false;
             if (Logined)
             {
                 fmain.Show();
-                Hide();
+                this.Hide();
             }
             else
-                Show();
+                this.Show();
 
         }
 
-        void Exit(object sender, EventArgs e)
+        private void iExit(object sender, EventArgs e)
         {
             NotyIcon.Visible = false;
             Application.Exit();
@@ -211,8 +212,7 @@ namespace AestheticServicesMultiTool
 
         private void Icon_MouseClick(object sender, MouseEventArgs e)
         {
-            NotyIcon.Visible = false;
-            this.Show();
+            iShow(sender, e);
         }
 
         private void panel_grab_MouseDown(object sender, MouseEventArgs e)
@@ -281,10 +281,17 @@ namespace AestheticServicesMultiTool
             g.DrawImage(b, 0, 0, b.Width, b.Height);  //My Final Solution :3
             return returnBitmap;
         }
-        
+
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(GetHWIDsCheckLink());
+            Console.WriteLine("\nOpenSSL");
+            Console.WriteLine(Crypto.OpenSSL_CBC.EncryptString("Ez egy szoveg\n"));
+            Console.WriteLine(Crypto.OpenSSL_CBC.DecryptString("N96+W9Z9pFDC+28MVcxx1g=="));
+
+            Console.WriteLine("\nOrderedShuffle");
+            Console.WriteLine(Crypto.OrderedShuffle.EncryptString("Ez egy szoveg"));
+            Console.WriteLine(Crypto.OrderedShuffle.DecryptString("AtEa VEptkIa "));
+            //MessageBox.Show(GetHWIDsCheckLink());
             fmain = new FormMain(this);
             Logined = true;
             fmain.Show();

@@ -73,7 +73,14 @@ namespace AestheticServicesMultiTool
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            TempUnlock.StatusUpdate += UnlockUpdateTest;
+        }
 
+        internal void UnlockUpdateTest(TempUnlock.eStatus status)
+        {
+            //I'm not sure is this need an Invoker
+            lbl_ul_status.Text = $"Status: {status}";
+            //throw new NotImplementedException();
         }
 
         private void sldbtn_scb_Enable_Click(object sender, EventArgs e)
@@ -158,7 +165,15 @@ namespace AestheticServicesMultiTool
         private void sldbtn_fm_Enable_Click(object sender, EventArgs e)
         {
             SetSliderText((AltoControls.SlideButton)sender);
-            FiddlerMarket.Enable(((AltoControls.SlideButton)sender).IsOn);
+            if (((AltoControls.SlideButton)sender).IsOn)
+                TempUnlock.Proxy.StartProxy();
+            else
+                TempUnlock.Proxy.StopProxy();
+        }
+
+        private void btn_ul_Launch_Click(object sender, EventArgs e)
+        {
+            TempUnlock.LaunchGame();
         }
     }
 }

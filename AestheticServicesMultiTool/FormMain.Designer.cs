@@ -70,6 +70,8 @@
             this.tb_cg_cookie = new System.Windows.Forms.TextBox();
             this.btn_cg_grab = new AltoControls.AltoButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_ul_Launch = new AltoControls.AltoButton();
+            this.lbl_ul_status = new System.Windows.Forms.Label();
             this.lbl_sldbtn_fm_Enable = new System.Windows.Forms.Label();
             this.sldbtn_fm_Enable = new AltoControls.SlideButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -78,6 +80,7 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.lbl_Tittle = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Selected)).BeginInit();
             this.pnl_grab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -98,6 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbox_scb_showpic)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pcb_Selected
@@ -233,7 +237,7 @@
             this.btn_tab_FiddlerMarket.Name = "btn_tab_FiddlerMarket";
             this.btn_tab_FiddlerMarket.Size = new System.Drawing.Size(308, 64);
             this.btn_tab_FiddlerMarket.TabIndex = 0;
-            this.btn_tab_FiddlerMarket.Text = "               Fiddler Market";
+            this.btn_tab_FiddlerMarket.Text = "               Temp Unlocker";
             this.btn_tab_FiddlerMarket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_tab_FiddlerMarket.UseVisualStyleBackColor = true;
             this.btn_tab_FiddlerMarket.Click += new System.EventHandler(this.btn_tab_Click);
@@ -263,7 +267,7 @@
             this.btn_tab_JesusConfig.Name = "btn_tab_JesusConfig";
             this.btn_tab_JesusConfig.Size = new System.Drawing.Size(308, 64);
             this.btn_tab_JesusConfig.TabIndex = 0;
-            this.btn_tab_JesusConfig.Text = "               Jesus Config";
+            this.btn_tab_JesusConfig.Text = "               Engine Config";
             this.btn_tab_JesusConfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_tab_JesusConfig.UseVisualStyleBackColor = true;
             this.btn_tab_JesusConfig.Click += new System.EventHandler(this.btn_tab_Click);
@@ -363,7 +367,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::AestheticServicesMultiTool.Properties.Resources.IconJesusConfig;
+            this.pictureBox5.Image = global::AestheticServicesMultiTool.Properties.Resources.IconEngineConfig;
             this.pictureBox5.Location = new System.Drawing.Point(10, 252);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(64, 64);
@@ -628,6 +632,8 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage3.Controls.Add(this.btn_ul_Launch);
+            this.tabPage3.Controls.Add(this.lbl_ul_status);
             this.tabPage3.Controls.Add(this.lbl_sldbtn_fm_Enable);
             this.tabPage3.Controls.Add(this.sldbtn_fm_Enable);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -636,6 +642,37 @@
             this.tabPage3.Size = new System.Drawing.Size(369, 467);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
+            // 
+            // btn_ul_Launch
+            // 
+            this.btn_ul_Launch.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
+            this.btn_ul_Launch.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
+            this.btn_ul_Launch.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ul_Launch.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_ul_Launch.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_ul_Launch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btn_ul_Launch.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
+            this.btn_ul_Launch.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            this.btn_ul_Launch.Location = new System.Drawing.Point(12, 60);
+            this.btn_ul_Launch.Name = "btn_ul_Launch";
+            this.btn_ul_Launch.Radius = 15;
+            this.btn_ul_Launch.Size = new System.Drawing.Size(154, 33);
+            this.btn_ul_Launch.Stroke = false;
+            this.btn_ul_Launch.StrokeColor = System.Drawing.Color.Gray;
+            this.btn_ul_Launch.TabIndex = 5;
+            this.btn_ul_Launch.Text = "Launch Game";
+            this.btn_ul_Launch.Transparency = false;
+            this.btn_ul_Launch.Click += new System.EventHandler(this.btn_ul_Launch_Click);
+            // 
+            // lbl_ul_status
+            // 
+            this.lbl_ul_status.AutoSize = true;
+            this.lbl_ul_status.ForeColor = System.Drawing.Color.White;
+            this.lbl_ul_status.Location = new System.Drawing.Point(15, 439);
+            this.lbl_ul_status.Name = "lbl_ul_status";
+            this.lbl_ul_status.Size = new System.Drawing.Size(74, 13);
+            this.lbl_ul_status.TabIndex = 4;
+            this.lbl_ul_status.Text = "Status: Ready";
             // 
             // lbl_sldbtn_fm_Enable
             // 
@@ -664,6 +701,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage4.Controls.Add(this.textBox1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -722,6 +760,13 @@
             this.lbl_Tittle.TabIndex = 0;
             this.lbl_Tittle.Text = "SkillCheckBot";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(18, 11);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(163, 20);
+            this.textBox1.TabIndex = 0;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -760,6 +805,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -815,5 +862,8 @@
         private AltoControls.AltoButton btn_cg_grab;
         private System.Windows.Forms.Label lbl_sldbtn_fm_Enable;
         private AltoControls.SlideButton sldbtn_fm_Enable;
+        private System.Windows.Forms.Label lbl_ul_status;
+        private AltoControls.AltoButton btn_ul_Launch;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

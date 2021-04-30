@@ -123,6 +123,16 @@ namespace AestheticServicesMultiTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconEngineConfig {
+            get {
+                object obj = ResourceManager.GetObject("IconEngineConfig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconFiddler {
             get {
                 object obj = ResourceManager.GetObject("IconFiddler", resourceCulture);
