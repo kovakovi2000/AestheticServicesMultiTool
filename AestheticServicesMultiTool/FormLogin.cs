@@ -21,8 +21,6 @@ namespace AestheticServicesMultiTool
         private bool mov;
         private int movX;
         private int movY;
-        private string _pass = "";
-        private string _user = "";
         private string UserRegex = @"^[A-Za-z0-9_.\-]+$";
 
         private bool Logined = false;
@@ -32,6 +30,16 @@ namespace AestheticServicesMultiTool
         public FormLogin()
         {
             InitializeComponent();
+            this.btn_register.Enter += new System.EventHandler(Lib.UIEvent.ctrl_Enter);
+            this.btn_register.Leave += new System.EventHandler(Lib.UIEvent.ctrl_Leave);
+            this.tb_Password.Enter += new System.EventHandler(Lib.UIEvent.tb_Enter);
+            this.tb_Password.Leave += new System.EventHandler(Lib.UIEvent.tb_Leave);
+            this.tb_Username.Enter += new System.EventHandler(Lib.UIEvent.tb_Enter);
+            this.tb_Username.Leave += new System.EventHandler(Lib.UIEvent.tb_Leave);
+            this.btn_Login.Enter += new System.EventHandler(Lib.UIEvent.ctrl_Enter);
+            this.btn_Login.Leave += new System.EventHandler(Lib.UIEvent.ctrl_Leave);
+
+
             lbl_ErrorOutput.BackColor = Color.FromArgb(0, 0, 0, 0);
             pictureBox1.BackColor = Color.FromArgb(0, 0, 0, 0);
             NotyIcon.ContextMenu = new ContextMenu(
@@ -61,16 +69,27 @@ namespace AestheticServicesMultiTool
             NotyIcon.Visible = false;
             Application.Exit();
         }
-        delegate void SetForeColor(Control control, Color color);
-        private void SetControlForeColor(Control control, Color color)
+        delegate void SetBackColor(Control control, Color color);
+        private void SetControlBackColor(Control control, Color color)
         {
             if (control.InvokeRequired)
             {
-                SetForeColor d = new SetForeColor(SetControlForeColor);
+                SetBackColor d = new SetBackColor(SetControlBackColor);
                 this.BeginInvoke(d, new object[] { control, color });
             }
             else
                 control.BackColor = color;
+        }
+
+        private void SetAltoBackColor(Control control, Color color)
+        {
+            if (control.InvokeRequired)
+            {
+                SetBackColor d = new SetBackColor(SetAltoBackColor);
+                this.BeginInvoke(d, new object[] { control, color });
+            }
+            else
+                ((AltoTextBox)control).Br = color;
         }
 
         delegate void SetEnable(Control control, bool enable);
@@ -91,12 +110,22 @@ namespace AestheticServicesMultiTool
             {
                 for (int i = 0; i < 3; i++)
                 {
-                    SetControlForeColor(control, Color.Red);
+                    SetControlBackColor(control, Color.Red);
+                    //SetAltoBackColor(Controls[Controls.IndexOfKey(control.Name + "_bg")], Color.Red);
                     Thread.Sleep(200);
-                    SetControlForeColor(control, Color.White);
+                    SetControlBackColor(control, Color.White);
+                    //SetAltoBackColor(Controls[Controls.IndexOfKey(control.Name + "_bg")], Color.White);
                     Thread.Sleep(200);
                 }
             }).Start();
+        }
+
+        private object getTextBoxGB(TextBox textbox)
+        {
+            foreach (Control item in Controls)
+                if ((textbox.Name + "_bg") == item.Name)
+                    return item;
+            return null;
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -233,34 +262,6 @@ namespace AestheticServicesMultiTool
             mov = false;
         }
 
-        private void tb_Username_Enter(object sender, EventArgs e)
-        {
-            ((TextBox)sender).Text = _user;
-        }
-
-        private void tb_Username_Leave(object sender, EventArgs e)
-        {
-            _user = ((TextBox)sender).Text;
-            if (string.IsNullOrEmpty(_user))
-                ((TextBox)sender).Text = "Username";
-        }
-
-        private void tb_Password_Enter(object sender, EventArgs e)
-        {
-            ((TextBox)sender).PasswordChar = '•';
-            ((TextBox)sender).Text = _pass;
-        }
-
-        private void tb_Password_Leave(object sender, EventArgs e)
-        {
-            _pass = ((TextBox)sender).Text;
-            if (string.IsNullOrEmpty(_pass))
-            {
-                ((TextBox)sender).Text = "Password";
-                ((TextBox)sender).PasswordChar = '\0';
-            }
-        }
-
         public static Bitmap RotateImageN(Bitmap b, float angle)
         {
             //Create a new empty bitmap to hold rotated image.
@@ -285,12 +286,12 @@ namespace AestheticServicesMultiTool
         private void FormLogin_Load(object sender, EventArgs e)
         {
             Console.WriteLine("\nOpenSSL");
-            Console.WriteLine(Crypto.OpenSSL_CBC.EncryptString("Ez egy szoveg\n"));
-            Console.WriteLine(Crypto.OpenSSL_CBC.DecryptString("N96+W9Z9pFDC+28MVcxx1g=="));
+            Console.WriteLine(System.Web.HttpUtility.UrlEncode(Crypto.OpenSSL_CBC.EncryptString("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, urna vel rhoncus faucibus, odio massa tempor velit, efficitur malesuada sem leo eu lacus. Etiam laoreet laoreet consectetur. Vestibulum nec magna eget quam convallis semper ac eu ligula. Nunc ante libero, tincidunt ac blandit quis, tempor ut nulla. Donec aliquet lorem eu est finibus, id lobortis diam accumsan. Integer maximus sem id lacinia ultricies. Vestibulum molestie odio at fringilla euismod. Morbi ultricies justo vel ipsum feugiat mattis. Morbi suscipit sed tortor nec interdum. Vivamus quam mi, sollicitudin id viverra in, sodales a nulla. Sed porta aliquet erat, a scelerisque nulla ullamcorper et. Quisque mattis varius nibh, id fringilla massa tincidunt id.")));
+            Console.WriteLine(Crypto.OpenSSL_CBC.DecryptString("/2ssGbvgNlkqzRoSHcIU6A=="));
 
             Console.WriteLine("\nOrderedShuffle");
-            Console.WriteLine(Crypto.OrderedShuffle.EncryptString("Ez egy szoveg"));
-            Console.WriteLine(Crypto.OrderedShuffle.DecryptString("AtEa VEptkIa "));
+            Console.WriteLine(System.Web.HttpUtility.UrlEncode(Crypto.OrderedShuffle.EncryptString("Ez egy szoveg")));
+            Console.WriteLine(Crypto.OrderedShuffle.DecryptString("AsEJarElsgpJa"));
             //MessageBox.Show(GetHWIDsCheckLink());
             fmain = new FormMain(this);
             Logined = true;
@@ -298,28 +299,32 @@ namespace AestheticServicesMultiTool
             this.Hide();
         }
 
-private static string GetHWIDsCheckLink()
-{
-    string ret = "https://example.com/whid?proc=";
-    foreach (ManagementObject mo in new ManagementObjectSearcher("Select * From Win32_processor").Get())
-        ret += mo["ProcessorID"].ToString();
+        private void btn_register_Click(object sender, EventArgs e)
+        {
+            new FormRegister().ShowDialog();
+        }
 
-    ManagementObject dsk = new ManagementObject(@"win32_logicaldisk.deviceid=""c:""");
-    dsk.Get();
-    ret += $"&disk={dsk["VolumeSerialNumber"].ToString()}&mboard=";
+        //private void tb_Enter(object sender, EventArgs e)
+        //{
+        //    if (((TextBox)sender).Text == ((TextBox)sender).Name.Substring(3).Replace("_", " "))
+        //        ((TextBox)sender).Text = string.Empty;
+        //    if (((TextBox)sender).Name.Contains("Pass"))
+        //        ((TextBox)sender).PasswordChar = '•';
+        //}
 
-    foreach (ManagementObject mo in new ManagementObjectSearcher("SELECT * FROM Win32_BaseBoard").Get())
-        ret += (string)mo["SerialNumber"];
-            
-    return ret;
-}
+        //private void tb_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrEmpty(((TextBox)sender).Text))
+        //    {
+        //        ((TextBox)sender).Text = ((TextBox)sender).Name.Substring(3).Replace("_", " ");
+        //        if (((TextBox)sender).Name.Contains("Pass"))
+        //            ((TextBox)sender).PasswordChar = '\0';
+        //    }
+        //}
 
-void MainThread()
-{
-    if (new WebClient().DownloadString(GetHWIDsCheckLink()).Equals("0"))
-    {
-        //somehow break the game like 'while(true){}'
-    }
-}
+        private void tb_BackColorChanged(object sender, EventArgs e)
+        {
+            (Controls[Controls.IndexOfKey((sender as TextBox).Name + "_bg")] as AltoTextBox).Br = (sender as TextBox).BackColor;
+        }
     }
 }
