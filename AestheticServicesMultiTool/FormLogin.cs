@@ -18,9 +18,6 @@ namespace AestheticServicesMultiTool
 {
     public partial class FormLogin : Form
     {
-        private bool mov;
-        private int movX;
-        private int movY;
         private string UserRegex = @"^[A-Za-z0-9_.\-]+$";
 
         private bool Logined = false;
@@ -38,7 +35,9 @@ namespace AestheticServicesMultiTool
             this.tb_Username.Leave += new System.EventHandler(Lib.UIEvent.tb_Leave);
             this.btn_Login.Enter += new System.EventHandler(Lib.UIEvent.ctrl_Enter);
             this.btn_Login.Leave += new System.EventHandler(Lib.UIEvent.ctrl_Leave);
-
+            this.panel_grab.MouseDown += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseDown);
+            this.panel_grab.MouseMove += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseMove);
+            this.panel_grab.MouseUp += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseUp);
 
             lbl_ErrorOutput.BackColor = Color.FromArgb(0, 0, 0, 0);
             pictureBox1.BackColor = Color.FromArgb(0, 0, 0, 0);
@@ -242,24 +241,6 @@ namespace AestheticServicesMultiTool
         private void Icon_MouseClick(object sender, MouseEventArgs e)
         {
             iShow(sender, e);
-        }
-
-        private void panel_grab_MouseDown(object sender, MouseEventArgs e)
-        {
-            mov = true;
-            movX = e.X;
-            movY = e.Y;
-        }
-
-        private void panel_grab_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mov)
-                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
-        }
-
-        private void panel_grab_MouseUp(object sender, MouseEventArgs e)
-        {
-            mov = false;
         }
 
         public static Bitmap RotateImageN(Bitmap b, float angle)

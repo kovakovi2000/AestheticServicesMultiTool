@@ -34,5 +34,28 @@ namespace AestheticServicesMultiTool.Lib
         {
             (sender as Control).ForeColor = Color.White;
         }
+
+        private static bool mov;
+        private static int movX;
+        private static int movY;
+
+        internal static void panel_grab_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = true;
+            movX = e.X + ((Control)sender).Location.X;
+            movY = e.Y + ((Control)sender).Location.Y;
+        }
+
+        internal static void panel_grab_MouseMove(object sender, MouseEventArgs e)
+        {
+            Form form = (sender as Control).FindForm();
+            if (mov)
+                form.SetDesktopLocation(Control.MousePosition.X - movX, Control.MousePosition.Y - movY);
+        }
+
+        internal static void panel_grab_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = false;
+        }
     }
 }

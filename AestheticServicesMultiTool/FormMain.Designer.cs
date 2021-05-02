@@ -125,9 +125,6 @@
             this.pnl_grab.Name = "pnl_grab";
             this.pnl_grab.Size = new System.Drawing.Size(675, 38);
             this.pnl_grab.TabIndex = 0;
-            this.pnl_grab.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseDown);
-            this.pnl_grab.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseMove);
-            this.pnl_grab.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseUp);
             // 
             // pictureBox10
             // 
@@ -138,9 +135,6 @@
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 7;
             this.pictureBox10.TabStop = false;
-            this.pictureBox10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseDown);
-            this.pictureBox10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseMove);
-            this.pictureBox10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseUp);
             // 
             // pictureBox9
             // 
@@ -151,9 +145,6 @@
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 6;
             this.pictureBox9.TabStop = false;
-            this.pictureBox9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseDown);
-            this.pictureBox9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseMove);
-            this.pictureBox9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_grab_MouseUp);
             // 
             // btn_Minimalize
             // 

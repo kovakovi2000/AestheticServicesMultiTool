@@ -22,6 +22,15 @@ namespace AestheticServicesMultiTool
         {
             this.flogin = flogin;
             InitializeComponent();
+            this.pnl_grab.MouseDown += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseDown);
+            this.pnl_grab.MouseMove += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseMove);
+            this.pnl_grab.MouseUp += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseUp);
+            this.pictureBox10.MouseDown += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseDown);
+            this.pictureBox10.MouseMove += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseMove);
+            this.pictureBox10.MouseUp += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseUp);
+            this.pictureBox9.MouseDown += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseDown);
+            this.pictureBox9.MouseMove += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseMove);
+            this.pictureBox9.MouseUp += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseUp);
         }
 
         private void SetButtonSelected(object sender)
@@ -39,24 +48,6 @@ namespace AestheticServicesMultiTool
 
             SetButtonSelected(sender);
             lbl_Tittle.Text = ((Button)sender).Text.Substring(15);
-        }
-
-        private void pnl_grab_MouseDown(object sender, MouseEventArgs e)
-        {
-            mov = true;
-            movX = e.X + ((Control)sender).Location.X;
-            movY = e.Y + ((Control)sender).Location.Y;
-        }
-
-        private void pnl_grab_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mov)
-                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
-        }
-
-        private void pnl_grab_MouseUp(object sender, MouseEventArgs e)
-        {
-            mov = false;
         }
 
         private void btn_Close_Click(object sender, EventArgs e)

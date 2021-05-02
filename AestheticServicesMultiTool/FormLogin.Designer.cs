@@ -78,9 +78,6 @@
             this.panel_grab.Name = "panel_grab";
             this.panel_grab.Size = new System.Drawing.Size(330, 38);
             this.panel_grab.TabIndex = 10;
-            this.panel_grab.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_grab_MouseDown);
-            this.panel_grab.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_grab_MouseMove);
-            this.panel_grab.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel_grab_MouseUp);
             // 
             // btn_Minimalize
             // 
