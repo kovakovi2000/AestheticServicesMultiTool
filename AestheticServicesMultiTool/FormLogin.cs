@@ -1,4 +1,5 @@
-﻿using AestheticServicesMultiTool.Properties;
+﻿using AestheticServicesMultiTool.Lib;
+using AestheticServicesMultiTool.Properties;
 using AltoControls;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,11 @@ namespace AestheticServicesMultiTool
                             new MenuItem("-"),
                             new MenuItem("Exit", iExit)
                         });
+            Console.WriteLine("\n\n---------------------------------------------------\n\n");
+            bool suc;
+            Console.WriteLine(LocalSecurity.FingerPrint.Value(out suc));
+            Console.WriteLine("\n" + suc);
+            Console.WriteLine("\n\n---------------------------------------------------\n\n");
         }
 
         private void iShow(object sender, EventArgs e)
