@@ -13,10 +13,6 @@ namespace AestheticServicesMultiTool
 {
     public partial class FormRegister : Form
     {
-        private string _user;
-        private string _pass;
-        private string _pass_again;
-
         public FormRegister()
         {
             InitializeComponent();
@@ -32,6 +28,8 @@ namespace AestheticServicesMultiTool
             this.tb_Password.Leave += new System.EventHandler(Lib.UIEvent.tb_Leave);
             this.tb_Username.Enter += new System.EventHandler(Lib.UIEvent.tb_Enter);
             this.tb_Username.Leave += new System.EventHandler(Lib.UIEvent.tb_Leave);
+            this.tb_Register_key.Enter += new System.EventHandler(Lib.UIEvent.tb_Enter);
+            this.tb_Register_key.Leave += new System.EventHandler(Lib.UIEvent.tb_Leave);
             this.panel_grab.MouseDown += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseDown);
             this.panel_grab.MouseMove += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseMove);
             this.panel_grab.MouseUp += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseUp);

@@ -39,6 +39,8 @@
             this.tb_Username = new System.Windows.Forms.TextBox();
             this.tb_Password = new System.Windows.Forms.TextBox();
             this.tb_Password_confirm = new System.Windows.Forms.TextBox();
+            this.tb_Register_key_bg = new AltoControls.AltoTextBox();
+            this.tb_Register_key = new System.Windows.Forms.TextBox();
             this.panel_grab.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             this.btn_Register.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.btn_Register.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
             this.btn_Register.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
-            this.btn_Register.Location = new System.Drawing.Point(80, 204);
+            this.btn_Register.Location = new System.Drawing.Point(78, 252);
             this.btn_Register.Name = "btn_Register";
             this.btn_Register.Radius = 15;
             this.btn_Register.Size = new System.Drawing.Size(170, 33);
@@ -66,7 +68,7 @@
             // 
             this.cb_acceptToS.AutoSize = true;
             this.cb_acceptToS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.cb_acceptToS.Location = new System.Drawing.Point(48, 183);
+            this.cb_acceptToS.Location = new System.Drawing.Point(46, 231);
             this.cb_acceptToS.Name = "cb_acceptToS";
             this.cb_acceptToS.Size = new System.Drawing.Size(161, 17);
             this.cb_acceptToS.TabIndex = 3;
@@ -79,7 +81,7 @@
             this.lbl_ToS.AutoSize = true;
             this.lbl_ToS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbl_ToS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lbl_ToS.Location = new System.Drawing.Point(201, 184);
+            this.lbl_ToS.Location = new System.Drawing.Point(199, 232);
             this.lbl_ToS.Name = "lbl_ToS";
             this.lbl_ToS.Size = new System.Drawing.Size(87, 13);
             this.lbl_ToS.TabIndex = 10;
@@ -189,15 +191,41 @@
             this.tb_Password_confirm.Text = "Password confirm";
             this.tb_Password_confirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tb_Register_key_bg
+            // 
+            this.tb_Register_key_bg.BackColor = System.Drawing.Color.Transparent;
+            this.tb_Register_key_bg.Br = System.Drawing.Color.White;
+            this.tb_Register_key_bg.Enabled = false;
+            this.tb_Register_key_bg.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.tb_Register_key_bg.ForeColor = System.Drawing.Color.DimGray;
+            this.tb_Register_key_bg.Location = new System.Drawing.Point(12, 161);
+            this.tb_Register_key_bg.Name = "tb_Register_key_bg";
+            this.tb_Register_key_bg.Size = new System.Drawing.Size(314, 33);
+            this.tb_Register_key_bg.TabIndex = 4;
+            // 
+            // tb_Register_key
+            // 
+            this.tb_Register_key.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_Register_key.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.tb_Register_key.ForeColor = System.Drawing.Color.DimGray;
+            this.tb_Register_key.Location = new System.Drawing.Point(22, 167);
+            this.tb_Register_key.Name = "tb_Register_key";
+            this.tb_Register_key.Size = new System.Drawing.Size(296, 21);
+            this.tb_Register_key.TabIndex = 2;
+            this.tb_Register_key.Text = "Register key";
+            this.tb_Register_key.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(338, 246);
+            this.ClientSize = new System.Drawing.Size(338, 293);
+            this.Controls.Add(this.tb_Register_key);
             this.Controls.Add(this.tb_Password_confirm);
             this.Controls.Add(this.tb_Password);
             this.Controls.Add(this.tb_Username);
+            this.Controls.Add(this.tb_Register_key_bg);
             this.Controls.Add(this.panel_grab);
             this.Controls.Add(this.tb_Password_confirm_bg);
             this.Controls.Add(this.tb_Password_bg);
@@ -228,5 +256,7 @@
         private System.Windows.Forms.TextBox tb_Username;
         private System.Windows.Forms.TextBox tb_Password;
         private System.Windows.Forms.TextBox tb_Password_confirm;
+        private AltoControls.AltoTextBox tb_Register_key_bg;
+        private System.Windows.Forms.TextBox tb_Register_key;
     }
 }
