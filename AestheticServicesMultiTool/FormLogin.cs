@@ -272,13 +272,13 @@ namespace AestheticServicesMultiTool
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("\nOpenSSL");
-            Console.WriteLine(System.Web.HttpUtility.UrlEncode(Crypto.OpenSSL_CBC.EncryptString("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, urna vel rhoncus faucibus, odio massa tempor velit, efficitur malesuada sem leo eu lacus. Etiam laoreet laoreet consectetur. Vestibulum nec magna eget quam convallis semper ac eu ligula. Nunc ante libero, tincidunt ac blandit quis, tempor ut nulla. Donec aliquet lorem eu est finibus, id lobortis diam accumsan. Integer maximus sem id lacinia ultricies. Vestibulum molestie odio at fringilla euismod. Morbi ultricies justo vel ipsum feugiat mattis. Morbi suscipit sed tortor nec interdum. Vivamus quam mi, sollicitudin id viverra in, sodales a nulla. Sed porta aliquet erat, a scelerisque nulla ullamcorper et. Quisque mattis varius nibh, id fringilla massa tincidunt id.")));
-            Console.WriteLine(Crypto.OpenSSL_CBC.DecryptString("/2ssGbvgNlkqzRoSHcIU6A=="));
+            //Console.WriteLine("\nOpenSSL");
+            //Console.WriteLine(System.Web.HttpUtility.UrlEncode(Crypto.OpenSSL_CBC.EncryptString("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, urna vel rhoncus faucibus, odio massa tempor velit, efficitur malesuada sem leo eu lacus. Etiam laoreet laoreet consectetur. Vestibulum nec magna eget quam convallis semper ac eu ligula. Nunc ante libero, tincidunt ac blandit quis, tempor ut nulla. Donec aliquet lorem eu est finibus, id lobortis diam accumsan. Integer maximus sem id lacinia ultricies. Vestibulum molestie odio at fringilla euismod. Morbi ultricies justo vel ipsum feugiat mattis. Morbi suscipit sed tortor nec interdum. Vivamus quam mi, sollicitudin id viverra in, sodales a nulla. Sed porta aliquet erat, a scelerisque nulla ullamcorper et. Quisque mattis varius nibh, id fringilla massa tincidunt id.")));
+            //Console.WriteLine(Crypto.OpenSSL_CBC.DecryptString("/2ssGbvgNlkqzRoSHcIU6A=="));
 
-            Console.WriteLine("\nOrderedShuffle");
-            Console.WriteLine(System.Web.HttpUtility.UrlEncode(Crypto.OrderedShuffle.EncryptString("Ez egy szoveg")));
-            Console.WriteLine(Crypto.OrderedShuffle.DecryptString("AsEJarElsgpJa"));
+            //Console.WriteLine("\nOrderedShuffle");
+            //Console.WriteLine(System.Web.HttpUtility.UrlEncode(Crypto.OrderedShuffle.EncryptString("Ez egy szoveg")));
+            //Console.WriteLine(Crypto.OrderedShuffle.DecryptString("AsEJarElsgpJa"));
             //MessageBox.Show(GetHWIDsCheckLink());
             fmain = new FormMain(this);
             Logined = true;

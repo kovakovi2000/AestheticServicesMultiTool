@@ -193,6 +193,26 @@ namespace AestheticServicesMultiTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ranks_killer_reversed {
+            get {
+                object obj = ResourceManager.GetObject("Ranks_killer_reversed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ranks_survivor_reversed {
+            get {
+                object obj = ResourceManager.GetObject("Ranks_survivor_reversed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SkillCheckIcon {
             get {
                 object obj = ResourceManager.GetObject("SkillCheckIcon", resourceCulture);
@@ -206,6 +226,26 @@ namespace AestheticServicesMultiTool.Properties {
         internal static System.Drawing.Bitmap SkillSubImage {
             get {
                 object obj = ResourceManager.GetObject("SkillSubImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VisibleIcon {
+            get {
+                object obj = ResourceManager.GetObject("VisibleIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VisibleIconActive {
+            get {
+                object obj = ResourceManager.GetObject("VisibleIconActive", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

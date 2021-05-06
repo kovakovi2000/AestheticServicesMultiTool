@@ -104,7 +104,10 @@
     <Compile Include="Lib\UIEvent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\BloodPointModifier.cs" />
     <Compile Include="Tools\CookieGrab.cs" />
+    <Compile Include="Tools\RankChanger.cs" />
+    <Compile Include="Tools\SaveInjector.cs" />
     <Compile Include="Tools\SkillCheckBot.cs" />
     <Compile Include="Tools\TempUnlock.cs" />
     <EmbeddedResource Include="FormLogin.resx">
@@ -195,6 +198,17 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Ranks_killer_reversed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ranks_survivor_reversed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisibleIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisibleIconActive.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

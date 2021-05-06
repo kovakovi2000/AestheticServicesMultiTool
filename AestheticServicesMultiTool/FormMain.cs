@@ -1,10 +1,15 @@
-﻿using AestheticServicesMultiTool.Tools;
+﻿using AestheticServicesMultiTool.Properties;
+using AestheticServicesMultiTool.Tools;
+using AltoControls;
+using Siticone.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,23 +36,20 @@ namespace AestheticServicesMultiTool
             this.pictureBox9.MouseDown += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseDown);
             this.pictureBox9.MouseMove += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseMove);
             this.pictureBox9.MouseUp += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseUp);
-        }
-
-        private void SetButtonSelected(object sender)
-        {
-            pcb_Selected.Location = ((Button)sender).Location;
-            ((Button)sender).ForeColor = Color.FromArgb(192, 0, 192);
-            tabCtrl.SelectedIndex = ((Button)sender).Location.Y / 63;
+            this.tb_BloodPoint.Enter += new System.EventHandler(Lib.UIEvent.tb_Enter);
+            this.tb_BloodPoint.Leave += new System.EventHandler(Lib.UIEvent.tb_Leave);
         }
 
         private void btn_tab_Click(object sender, EventArgs e)
         {
-            foreach (Control item in pnl_tabs.Controls)
-                if (item.Name.StartsWith("btn_tab_"))
-                    ((Button)item).ForeColor = SkillCheckBot.SaveWhite;
+            //foreach (Control item in pnl_tabs.Controls)
+            //    if (item.Name.StartsWith("btn_tab_"))
+            //        ((SiticoneButton)item).ForeColor = SkillCheckBot.SaveWhite;
+            //((SiticoneButton)sender).ForeColor = Color.FromArgb(192, 0, 192);
 
-            SetButtonSelected(sender);
-            lbl_Tittle.Text = ((Button)sender).Text.Substring(15);
+            pcb_Selected.Location = ((SiticoneButton)sender).Location;
+            tabCtrl.SelectedIndex = ((SiticoneButton)sender).Location.Y / 63;
+            lbl_Tittle.Text = ((SiticoneButton)sender).Text;
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
@@ -65,6 +67,8 @@ namespace AestheticServicesMultiTool
         private void FormMain_Load(object sender, EventArgs e)
         {
             TempUnlock.StatusUpdate += UnlockUpdateTest;
+            picbox_rc_SurvivalRank.Image = RankChanger.Img_RankSurvival[RankChanger.RankSurvival];
+            picbox_rc_KillerRank.Image = RankChanger.Img_RankKiller[RankChanger.RankKiller];
         }
 
         internal void UnlockUpdateTest(TempUnlock.eStatus status)
@@ -94,13 +98,14 @@ namespace AestheticServicesMultiTool
                 control.Enabled = enable;
         }
 
-        private void SetSliderText(AltoControls.SlideButton button)
+        private void SetSliderText(AltoControls.SlideButton button, bool staydisabled = false)
         {
             button.Enabled = false;
+            
             new Thread(() =>
             {
-                Thread.Sleep(200);
-                SetControlEnable(button, true);
+                Thread.Sleep(300);
+                if(!staydisabled) SetControlEnable(button, true);
             }).Start();
             if (button.IsOn)
             {
@@ -165,6 +170,181 @@ namespace AestheticServicesMultiTool
         private void btn_ul_Launch_Click(object sender, EventArgs e)
         {
             TempUnlock.LaunchGame();
+        }
+
+        private void tb_BloodPoint_TextChanged(object sender, EventArgs e)
+        {
+            int temp = 0;
+            if (int.TryParse((sender as TextBox).Text, out temp))
+            {
+                if (temp > 1000000)
+                    ((TextBox)sender).Text = 1000000.ToString();
+                else if(temp < 0)
+                    ((TextBox)sender).Text = 0.ToString();
+
+                BloodPointModifier.BloodPoint = temp;
+            }
+            else
+            {
+                if (((TextBox)sender).Name.Substring(3).Replace("_", " ") != ((TextBox)sender).Text)
+                    ((TextBox)sender).Text = "";
+            }
+        }
+
+        private void sldbtn_ec_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in (sender as Control).Parent.Controls)
+                if (item != sender && item.Name.StartsWith("sldbtn_ec_"))
+                {
+                    (item as SlideButton).IsOn = false;
+                    SetSliderText((SlideButton)item);
+                }
+            SetSliderText((SlideButton)sender, true);
+        }
+
+        private void btn_rc_SurvivalRank_Right_Click(object sender, EventArgs e)
+        {
+            RankChanger.RankSurvival++;
+            if (RankChanger.RankSurvival > 19)
+                RankChanger.RankSurvival = 0;
+            picbox_rc_SurvivalRank.Image = RankChanger.Img_RankSurvival[RankChanger.RankSurvival];
+        }
+        
+        private void btn_rc_SurvivalRank_Left_Click(object sender, EventArgs e)
+        {
+            RankChanger.RankSurvival--;
+            if (RankChanger.RankSurvival < 0)
+                RankChanger.RankSurvival = 19;
+            picbox_rc_SurvivalRank.Image = RankChanger.Img_RankSurvival[RankChanger.RankSurvival];
+        }
+
+        private void btn_rc_KillerRank_Right_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btn_rc_KillerRank_Left_Click(object sender, EventArgs e)
+        {
+            RankChanger.RankKiller--;
+            if (RankChanger.RankKiller < 0)
+                RankChanger.RankKiller = 19;
+            picbox_rc_KillerRank.Image = RankChanger.Img_RankKiller[RankChanger.RankKiller];
+        }
+
+        private void rdbtn_ec_CheckedChanged(object sender, EventArgs e)
+        {
+            if ((sender as SiticoneCustomRadioButton).Checked)
+                foreach (Control item in (sender as Control).Parent.Controls)
+                {
+                    if (item != sender && item.Name == "lbl_" + (sender as Control).Name)
+                    {
+                        item.ForeColor = Color.Lime;
+                        break;
+                    }
+                }
+            else
+                foreach (Control item in (sender as Control).Parent.Controls)
+                {
+                    if (item != sender && item.Name == "lbl_" + (sender as Control).Name)
+                    {
+                        item.ForeColor = SkillCheckBot.SaveWhite;
+                        break;
+                    }
+                }
+        }
+
+        private bool VisibleID = false;
+        private void picbox_si_VisibleID_Click(object sender, EventArgs e)
+        {
+            VisibleID = !VisibleID;
+            if (VisibleID)
+            {
+                (sender as PictureBox).Image = Resources.VisibleIconActive;
+                tb_si_UserID.PasswordChar = '\0';
+            }
+            else
+            {
+                (sender as PictureBox).Image = Resources.VisibleIcon;
+                tb_si_UserID.PasswordChar = '•';
+            }
+        }
+
+        private Bitmap ToColorTone(Image image, Color? color = null, float brightness = 1.0f)
+        {
+            //creating a new bitmap image with selected color.
+            float scale = 1f;
+
+            float r = (color ?? Color.Black).R / 255f * scale;
+            float g = (color ?? Color.Black).G / 255f * scale;
+            float b = (color ?? Color.Black).B / 255f * scale;
+
+            // Color Matrix
+            float adjustedBrightness = brightness - 1.0f;
+            ColorMatrix cm = new ColorMatrix(new float[][]
+            {
+                new float[] {r, 0, 0, 0, 0},
+                new float[] {0, g, 0, 0, 0},
+                new float[] {0, 0, b, 0, 0},
+                new float[] {0, 0, 0, 1, 0},
+                new float[] {adjustedBrightness, adjustedBrightness, adjustedBrightness, 0, 1 }
+            });
+            ImageAttributes ImAttribute = new ImageAttributes();
+            ImAttribute.SetColorMatrix(cm);
+
+            //Color Matrix on new bitmap image
+            Point[] points =
+            {
+                new Point(0, 0),
+                new Point(image.Width - 1, 0),
+                new Point(0, image.Height - 1),
+            };
+            Rectangle rect = new Rectangle(0, 0, image.Width, image.Height);
+
+            Bitmap myBitmap = new Bitmap(image.Width, image.Height);
+            using (Graphics graphics = Graphics.FromImage(myBitmap))
+            {
+                graphics.DrawImage(image, points, rect, GraphicsUnit.Pixel, ImAttribute);
+            }
+            return myBitmap;
+        }
+
+        private void picbox_si_VisibleID_MouseEnter(object sender, EventArgs e)
+        {
+            if (VisibleID)
+            {
+                (sender as PictureBox).Image = ToColorTone(Resources.VisibleIconActive, null, 1.1f);
+            }
+            else
+            {
+                (sender as PictureBox).Image = ToColorTone(Resources.VisibleIcon, null, 1.1f);
+            }
+        }
+
+        private void picbox_si_VisibleID_MouseLeave(object sender, EventArgs e)
+        {
+            if (VisibleID)
+            {
+                (sender as PictureBox).Image = Resources.VisibleIconActive;
+            }
+            else
+            {
+                (sender as PictureBox).Image = Resources.VisibleIcon;
+            }
+        }
+
+        private void btn_si_CustomAdd_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "dbd save files (*.txt, *.json)|*.txt;*.json";
+            openFileDialog1.FilterIndex = 0;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFileName = openFileDialog1.FileName;
+                tb_si_CustomPath.Text = selectedFileName;
+            }
         }
     }
 }
