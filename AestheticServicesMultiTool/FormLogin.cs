@@ -20,6 +20,7 @@ namespace AestheticServicesMultiTool
     public partial class FormLogin : Form
     {
         private string UserRegex = @"^[A-Za-z0-9_.\-]+$";
+        private string HardwareID;
 
         private bool Logined = false;
 
@@ -49,11 +50,14 @@ namespace AestheticServicesMultiTool
                             new MenuItem("-"),
                             new MenuItem("Exit", iExit)
                         });
-            Console.WriteLine("\n\n---------------------------------------------------\n\n");
+
             bool suc;
-            Console.WriteLine(LocalSecurity.FingerPrint.Value(out suc));
-            Console.WriteLine("\n" + suc);
-            Console.WriteLine("\n\n---------------------------------------------------\n\n");
+            HardwareID = LocalSecurity.FingerPrint.Value(out suc);
+            if (suc)
+            {
+                MessageBox.Show("The program can't get some information, contant a support!");
+                Application.Exit();
+            }
         }
 
         private void iShow(object sender, EventArgs e)
@@ -167,12 +171,41 @@ namespace AestheticServicesMultiTool
             //    $"Password:\"{(_passEnter ? tb_Password.Text : _pass)}\"");
         }
 
+        private string CryptoKey = string.Empty;
         private void StartAccountCheck(string Username, string Password)
         {
             //temp for test
             Thread Main = Thread.CurrentThread;
             Rotate(true);
+
+            if (CryptoKey == string.Empty)
+                GetCryptoKey();
+
             new Thread(() => LoginCheck(Username, Password)).Start();
+        }
+
+        private void GetCryptoKey()
+        {
+            WebClient client = new WebClient();
+            string rawDownload = client.DownloadString("http://rekt.clans.hu/DBDACMT_System/GCC").Replace("<meta charset=\"UTF-8\">\r\n", "");
+            Console.WriteLine(rawDownload);
+            if (rawDownload == "DATABASE DOWN")
+            {
+                MessageBox.Show("The database is currently unreaclable, please try it again later");
+                return;
+            }
+            else if (rawDownload.StartsWith("BANNED"))
+            {
+                MessageBox.Show($"U got banned the {rawDownload.Substring(5)} times.");
+                return;
+            }
+            else if (rawDownload == "TOMANYFAIL")
+            {
+                MessageBox.Show($"U failed to login to many times please try it again later.");
+                return;
+            }
+
+            CryptoKey = Crypto.OpenSSL_CBC.DecryptString(Crypto.OrderedShuffle.DecryptString(rawDownload));
         }
 
         #region RotationLogo
@@ -212,8 +245,16 @@ namespace AestheticServicesMultiTool
         }
         private void LoginCheck(string username, string password)
         {
-            
-            Thread.Sleep(5000);
+            string encryped =
+                CryptoKey + ";" +
+                username + ";" +
+                Crypto.MD5.Create(password + "_ImSaltyAsFuck2021") + ";" +
+
+            WebClient client = new WebClient();
+            string rawDownload = client.DownloadString($"http://rekt.clans.hu/DBDACMT_System/LIS?cryptokey={encryted}").Replace("<meta charset=\"UTF-8\">\r\n", "");
+            Console.WriteLine(rawDownload);
+
+
             if (username == "Kova" && password == "asd123asd123")
             {
                 SafelyCallMeFromAnyThread(new Action(() => 

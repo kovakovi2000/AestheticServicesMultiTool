@@ -9,12 +9,34 @@ using System.Windows.Forms;
 
 namespace AestheticServicesMultiTool
 {
+    
+
     internal static class Crypto
     {
+        internal static class MD5
+        {
+            internal static string Create(string input)
+            {
+                // Use input string to calculate MD5 hash
+                using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+                {
+                    byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                    byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                    // Convert the byte array to hexadecimal string
+                    StringBuilder sb = new StringBuilder();
+                    for (int i = 0; i < hashBytes.Length; i++)
+                    {
+                        sb.Append(hashBytes[i].ToString("X2"));
+                    }
+                    return sb.ToString();
+                }
+            }
+        }
         internal static class OpenSSL_CBC
         {
             private static string password = "AestheticServicesMultiTool2021ByKova";
-            private static byte[] iv = { 0x49, 0x20, 0x6c, 0x69, 0x6b, 0x65, 0x20, 0x4d, 0x65, 0x77, 0x5f, 0x77, 0x61, 0x61, 0x3a, 0x33 };
+            private static byte[] iv = { 0x49, 0x20, 0x6c, 0x69, 0x6b, 0x65, 0x20, 0x4a, 0x65, 0x73, 0x73, 0x69, 0x6b, 0x61, 0x3a, 0x33 };
             //static byte[] iv = new byte[16] { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 };
             private static byte[] key;
             static OpenSSL_CBC()
