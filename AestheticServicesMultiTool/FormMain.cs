@@ -1,4 +1,5 @@
-﻿using AestheticServicesMultiTool.Properties;
+﻿using AestheticServicesMultiTool.Lib;
+using AestheticServicesMultiTool.Properties;
 using AestheticServicesMultiTool.Tools;
 using AltoControls;
 using Siticone.UI.WinForms;
@@ -8,9 +9,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,9 +22,8 @@ namespace AestheticServicesMultiTool
 {
     public partial class FormMain : Form
     {
-        private bool mov;
-        private int movX;
-        private int movY;
+        private Dictionary<string, bool> Access = new Dictionary<string, bool>();
+        private Regex rgxAccessDetail = new Regex(@"^[a-zA-Z]{5,32}=[0-1]$");
         private FormLogin flogin;
         public FormMain(FormLogin flogin)
         {
@@ -38,6 +40,9 @@ namespace AestheticServicesMultiTool
             this.pictureBox9.MouseUp += new System.Windows.Forms.MouseEventHandler(Lib.UIEvent.panel_grab_MouseUp);
             this.tb_BloodPoint.Enter += new System.EventHandler(Lib.UIEvent.tb_Enter);
             this.tb_BloodPoint.Leave += new System.EventHandler(Lib.UIEvent.tb_Leave);
+
+            GetCurrentAccess();
+            CheckAccess.Start();
         }
 
         private void btn_tab_Click(object sender, EventArgs e)
@@ -47,9 +52,37 @@ namespace AestheticServicesMultiTool
             //        ((SiticoneButton)item).ForeColor = SkillCheckBot.SaveWhite;
             //((SiticoneButton)sender).ForeColor = Color.FromArgb(192, 0, 192);
 
+            bool value = false;
+            Access.TryGetValue((sender as SiticoneButton).Name.Substring(9), out value);
+            if (!value)
+            {
+                MessageBox.Show("You don't have access to this tool");
+                return;
+            }
             pcb_Selected.Location = ((SiticoneButton)sender).Location;
             tabCtrl.SelectedIndex = ((SiticoneButton)sender).Location.Y / 63;
             lbl_Tittle.Text = ((SiticoneButton)sender).Text;
+        }
+
+        private void GetCurrentAccess()
+        {
+            //SkillCheckBot=1;CookieGrabber=0
+            string rawDownload = Server.Request($"http://rekt.clans.hu/DBDACMT_System/GUL?UserSession={flogin.UserSession}");
+            string[] s = rawDownload.Split(';');
+
+            foreach (var part in s)
+            {
+                string[] s2 = part.Split('=');
+                if (Access.ContainsKey(s2[0]))
+                    Access[s2[0]] = NumToBool(s2[1]);
+                else
+                    Access.Add(s2[0], NumToBool(s2[1]));
+            }
+        }
+
+        private bool NumToBool(string input)
+        {
+            return input == "1" ? true : false;
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
@@ -345,6 +378,11 @@ namespace AestheticServicesMultiTool
                 string selectedFileName = openFileDialog1.FileName;
                 tb_si_CustomPath.Text = selectedFileName;
             }
+        }
+
+        private void CheckAccess_Tick(object sender, EventArgs e)
+        {
+            GetCurrentAccess();
         }
     }
 }

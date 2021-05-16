@@ -10,6 +10,7 @@ using System.Linq;
 using System.Management;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,8 +20,11 @@ namespace AestheticServicesMultiTool
 {
     public partial class FormLogin : Form
     {
-        private string UserRegex = @"^[A-Za-z0-9_.\-]+$";
+        private Regex rgxUsername = new Regex(@"^[A-Za-z0-9_.\-]+$");
+        private Regex rgxDatematcher = new Regex(@"^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])) (?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)$");
         private string HardwareID;
+        private string userSession = string.Empty;
+        public string UserSession { get => userSession; }
 
         private bool Logined = false;
 
@@ -186,8 +190,7 @@ namespace AestheticServicesMultiTool
 
         private void GetCryptoKey()
         {
-            WebClient client = new WebClient();
-            string rawDownload = client.DownloadString("http://rekt.clans.hu/DBDACMT_System/GCC").Replace("<meta charset=\"UTF-8\">\r\n", "");
+            string rawDownload = Server.Request("http://rekt.clans.hu/DBDACMT_System/GCC");
             Console.WriteLine(rawDownload);
             if (rawDownload == "DATABASE DOWN")
             {
@@ -239,6 +242,7 @@ namespace AestheticServicesMultiTool
         #endregion
 
         Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
+
         public void SafelyCallMeFromAnyThread(Action a)
         {
             dispatcher.Invoke(a);
@@ -248,14 +252,37 @@ namespace AestheticServicesMultiTool
             string encryped =
                 CryptoKey + ";" +
                 username + ";" +
-                Crypto.MD5.Create(password + "_ImSaltyAsFuck2021") + ";" +
+                Crypto.MD5.Create(password + "_ImSaltyAsFuck2021") + ";" + LocalSecurity.FingerPrint.Value();
 
-            WebClient client = new WebClient();
-            string rawDownload = client.DownloadString($"http://rekt.clans.hu/DBDACMT_System/LIS?cryptokey={encryted}").Replace("<meta charset=\"UTF-8\">\r\n", "");
-            Console.WriteLine(rawDownload);
+            string rawDownload = Server.Request($"http://rekt.clans.hu/DBDACMT_System/LIS?cryptokey={encryped}");
+            Rotate(false);
+            if (rawDownload == "DATABASE DOWN")
+            {
+                MessageBox.Show("The database is currently unreaclable, please try it again later");
+                return;
+            }
+            else if (rawDownload.StartsWith("BANNED"))
+            {
+                MessageBox.Show($"U got banned the {rawDownload.Substring(5)} times.");
+                return;
+            }
+            else if (rawDownload == "TOMANYFAIL")
+            {
+                MessageBox.Show($"U failed to login to many times please try it again later.");
+                return;
+            }
+            else if (rawDownload == "CRYPTOKEYEXPIRED")
+            {
+                MessageBox.Show($"*lejárt kód*");
+                return;
+            }
+            else if (rawDownload == "ICORRECTDETAILS")
+            {
+                MessageBox.Show($"The username/password that you entered was incorrect.");
+                return;
+            }
 
-
-            if (username == "Kova" && password == "asd123asd123")
+            if (IsMessageCorrect(Crypto.OpenSSL_CBC.DecryptString(Crypto.OrderedShuffle.DecryptString(rawDownload)), username))
             {
                 SafelyCallMeFromAnyThread(new Action(() => 
                 {
@@ -264,13 +291,24 @@ namespace AestheticServicesMultiTool
                     fmain.Show();
                     this.Hide();
                 }));
-                Rotate(false);
             }
             else
             {
-                Rotate(false);
-                MessageBox.Show("Incorrect");
+                MessageBox.Show("CORRAPTED");
             }
+        }
+
+        private bool IsMessageCorrect(string rawDownload, string username)
+        {
+            string[] s = rawDownload.Split(';');
+            if (!username.Equals(s[0]))
+                return false;
+
+            if (!rgxDatematcher.IsMatch(s[1]))
+                return false;
+
+            userSession = Crypto.MD5.Create(rawDownload);
+            return true;
         }
 
         private void btn_Close_Click(object sender, EventArgs e)

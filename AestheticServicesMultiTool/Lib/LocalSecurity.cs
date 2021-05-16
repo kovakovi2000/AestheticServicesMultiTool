@@ -10,6 +10,30 @@ using System.Windows.Forms;
 
 namespace AestheticServicesMultiTool.Lib
 {
+    internal static class Server
+    {
+        internal static string Request(string link)
+        {
+            System.Net.WebClient client = new System.Net.WebClient();
+            return client.DownloadString(link).Replace("<meta charset=\"UTF-8\">\r\n", "");
+        }
+
+        internal static string Request(string link, out bool success)
+        {
+            try
+            {
+                System.Net.WebClient client = new System.Net.WebClient();
+                string raw = client.DownloadString(link).Replace("<meta charset=\"UTF-8\">\r\n", "");
+                success = true;
+                return raw;
+            }
+            catch (Exception)
+            {
+                success = false;
+                return null;
+            }
+        }
+    }
     internal static class LocalSecurity
     {
         internal static bool IsVPNConnected()
@@ -60,6 +84,22 @@ namespace AestheticServicesMultiTool.Lib
         {
             private static string fingerPrint = string.Empty;
             private static bool success = true;
+
+            internal static string Value()
+            {
+                if (string.IsNullOrEmpty(fingerPrint))
+                {
+                    fingerPrint += IsEmpty(cpuId(), FingerPrint.success, out FingerPrint.success) + ";"; // CPU
+                    fingerPrint += IsEmpty(cpu(), FingerPrint.success, out FingerPrint.success) + ";"; // CPU 2nd method
+                    fingerPrint += IsEmpty(baseId(), FingerPrint.success, out FingerPrint.success) + ";"; // motherboard
+                    fingerPrint += IsEmpty(motherboard(), FingerPrint.success, out FingerPrint.success) + ";"; // motherboard 2nd method
+                    fingerPrint += IsEmpty(diskId(), FingerPrint.success, out FingerPrint.success) + ";"; // c drive
+                    fingerPrint += IsEmpty(disk(), FingerPrint.success, out FingerPrint.success) + ";";  // c drive 2nd method
+                    fingerPrint += IsEmpty(macId(), FingerPrint.success, out FingerPrint.success); //MAC
+                }
+
+                return fingerPrint;
+            }
             internal static string Value(out bool success)
             {
                 if (string.IsNullOrEmpty(fingerPrint))

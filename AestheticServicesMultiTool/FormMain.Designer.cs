@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.pcb_Selected = new System.Windows.Forms.PictureBox();
             this.pnl_grab = new System.Windows.Forms.Panel();
@@ -38,6 +39,14 @@
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.pnl_tabs = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_tab_CookieGrabber = new Siticone.UI.WinForms.SiticoneButton();
+            this.btn_tab_FiddlerMarket = new Siticone.UI.WinForms.SiticoneButton();
+            this.btn_tab_BloodPointModify = new Siticone.UI.WinForms.SiticoneButton();
+            this.btn_tab_EngineConfig = new Siticone.UI.WinForms.SiticoneButton();
+            this.btn_tab_RankChanger = new Siticone.UI.WinForms.SiticoneButton();
+            this.btn_tab_SaveInjector = new Siticone.UI.WinForms.SiticoneButton();
+            this.btn_tab_SSLByPassInstall = new Siticone.UI.WinForms.SiticoneButton();
+            this.btn_tab_SkillCheckBot = new Siticone.UI.WinForms.SiticoneButton();
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.tabCtrl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -89,27 +98,20 @@
             this.picbox_rc_KillerRank = new System.Windows.Forms.PictureBox();
             this.picbox_rc_SurvivalRank = new System.Windows.Forms.PictureBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tb_si_CustomPath = new Siticone.UI.WinForms.SiticoneTextBox();
             this.picbox_si_VisibleID = new System.Windows.Forms.PictureBox();
             this.tb_si_UserID = new System.Windows.Forms.TextBox();
+            this.btn_si_InjectWithoutLegacy = new AltoControls.AltoButton();
+            this.btn_si_CustomInject = new AltoControls.AltoButton();
+            this.btn_si_CustomAdd = new AltoControls.AltoButton();
+            this.btn_si_InjectWithLegacy = new AltoControls.AltoButton();
             this.btn_si_GetUserID = new AltoControls.AltoButton();
             this.btn_si_GetSave = new AltoControls.AltoButton();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.lbl_Tittle = new System.Windows.Forms.Label();
-            this.btn_si_InjectWithLegacy = new AltoControls.AltoButton();
-            this.btn_si_InjectWithoutLegacy = new AltoControls.AltoButton();
-            this.tb_si_CustomPath = new Siticone.UI.WinForms.SiticoneTextBox();
-            this.btn_si_CustomAdd = new AltoControls.AltoButton();
-            this.btn_si_CustomInject = new AltoControls.AltoButton();
-            this.btn_tab_SkillCheckBot = new Siticone.UI.WinForms.SiticoneButton();
-            this.btn_tab_CookieGrabber = new Siticone.UI.WinForms.SiticoneButton();
-            this.btn_tab_FiddlerMarket = new Siticone.UI.WinForms.SiticoneButton();
-            this.btn_tab_BloodPointModify = new Siticone.UI.WinForms.SiticoneButton();
-            this.btn_tab_EngineConfig = new Siticone.UI.WinForms.SiticoneButton();
-            this.btn_tab_RankChanger = new Siticone.UI.WinForms.SiticoneButton();
-            this.btn_tab_SaveInjector = new Siticone.UI.WinForms.SiticoneButton();
-            this.btn_tab_SSLByPassInstall = new Siticone.UI.WinForms.SiticoneButton();
-            this.btn_sbi_Install = new AltoControls.AltoButton();
             this.btn_sbi_Remove = new AltoControls.AltoButton();
+            this.btn_sbi_Install = new AltoControls.AltoButton();
+            this.lbl_Tittle = new System.Windows.Forms.Label();
+            this.CheckAccess = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pcb_Selected)).BeginInit();
             this.pnl_grab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -249,6 +251,183 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 504);
             this.panel1.TabIndex = 2;
+            // 
+            // btn_tab_CookieGrabber
+            // 
+            this.btn_tab_CookieGrabber.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_tab_CookieGrabber.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_tab_CookieGrabber.CheckedState.Parent = this.btn_tab_CookieGrabber;
+            this.btn_tab_CookieGrabber.CustomImages.Parent = this.btn_tab_CookieGrabber;
+            this.btn_tab_CookieGrabber.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btn_tab_CookieGrabber.Font = new System.Drawing.Font("Impact", 20.25F);
+            this.btn_tab_CookieGrabber.ForeColor = System.Drawing.Color.White;
+            this.btn_tab_CookieGrabber.HoveredState.Parent = this.btn_tab_CookieGrabber;
+            this.btn_tab_CookieGrabber.Image = global::AestheticServicesMultiTool.Properties.Resources.IconCookieGrabber;
+            this.btn_tab_CookieGrabber.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_CookieGrabber.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_tab_CookieGrabber.Location = new System.Drawing.Point(0, 63);
+            this.btn_tab_CookieGrabber.Name = "btn_tab_CookieGrabber";
+            this.btn_tab_CookieGrabber.ShadowDecoration.Parent = this.btn_tab_CookieGrabber;
+            this.btn_tab_CookieGrabber.Size = new System.Drawing.Size(308, 64);
+            this.btn_tab_CookieGrabber.TabIndex = 7;
+            this.btn_tab_CookieGrabber.Text = "Cookie Grabber";
+            this.btn_tab_CookieGrabber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_CookieGrabber.Click += new System.EventHandler(this.btn_tab_Click);
+            // 
+            // btn_tab_FiddlerMarket
+            // 
+            this.btn_tab_FiddlerMarket.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_tab_FiddlerMarket.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_tab_FiddlerMarket.CheckedState.Parent = this.btn_tab_FiddlerMarket;
+            this.btn_tab_FiddlerMarket.CustomImages.Parent = this.btn_tab_FiddlerMarket;
+            this.btn_tab_FiddlerMarket.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btn_tab_FiddlerMarket.Font = new System.Drawing.Font("Impact", 20.25F);
+            this.btn_tab_FiddlerMarket.ForeColor = System.Drawing.Color.White;
+            this.btn_tab_FiddlerMarket.HoveredState.Parent = this.btn_tab_FiddlerMarket;
+            this.btn_tab_FiddlerMarket.Image = global::AestheticServicesMultiTool.Properties.Resources.IconFiddler;
+            this.btn_tab_FiddlerMarket.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_FiddlerMarket.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_tab_FiddlerMarket.Location = new System.Drawing.Point(0, 126);
+            this.btn_tab_FiddlerMarket.Name = "btn_tab_FiddlerMarket";
+            this.btn_tab_FiddlerMarket.ShadowDecoration.Parent = this.btn_tab_FiddlerMarket;
+            this.btn_tab_FiddlerMarket.Size = new System.Drawing.Size(308, 64);
+            this.btn_tab_FiddlerMarket.TabIndex = 7;
+            this.btn_tab_FiddlerMarket.Text = "Temp Unlocker";
+            this.btn_tab_FiddlerMarket.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_FiddlerMarket.Click += new System.EventHandler(this.btn_tab_Click);
+            // 
+            // btn_tab_BloodPointModify
+            // 
+            this.btn_tab_BloodPointModify.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_tab_BloodPointModify.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_tab_BloodPointModify.CheckedState.Parent = this.btn_tab_BloodPointModify;
+            this.btn_tab_BloodPointModify.CustomImages.Parent = this.btn_tab_BloodPointModify;
+            this.btn_tab_BloodPointModify.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btn_tab_BloodPointModify.Font = new System.Drawing.Font("Impact", 20.25F);
+            this.btn_tab_BloodPointModify.ForeColor = System.Drawing.Color.White;
+            this.btn_tab_BloodPointModify.HoveredState.Parent = this.btn_tab_BloodPointModify;
+            this.btn_tab_BloodPointModify.Image = global::AestheticServicesMultiTool.Properties.Resources.IconBloodPoint;
+            this.btn_tab_BloodPointModify.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_BloodPointModify.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_tab_BloodPointModify.Location = new System.Drawing.Point(0, 189);
+            this.btn_tab_BloodPointModify.Name = "btn_tab_BloodPointModify";
+            this.btn_tab_BloodPointModify.ShadowDecoration.Parent = this.btn_tab_BloodPointModify;
+            this.btn_tab_BloodPointModify.Size = new System.Drawing.Size(308, 64);
+            this.btn_tab_BloodPointModify.TabIndex = 7;
+            this.btn_tab_BloodPointModify.Text = "BloodPoint Modify";
+            this.btn_tab_BloodPointModify.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_BloodPointModify.Click += new System.EventHandler(this.btn_tab_Click);
+            // 
+            // btn_tab_EngineConfig
+            // 
+            this.btn_tab_EngineConfig.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_tab_EngineConfig.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_tab_EngineConfig.CheckedState.Parent = this.btn_tab_EngineConfig;
+            this.btn_tab_EngineConfig.CustomImages.Parent = this.btn_tab_EngineConfig;
+            this.btn_tab_EngineConfig.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btn_tab_EngineConfig.Font = new System.Drawing.Font("Impact", 20.25F);
+            this.btn_tab_EngineConfig.ForeColor = System.Drawing.Color.White;
+            this.btn_tab_EngineConfig.HoveredState.Parent = this.btn_tab_EngineConfig;
+            this.btn_tab_EngineConfig.Image = global::AestheticServicesMultiTool.Properties.Resources.IconEngineConfig;
+            this.btn_tab_EngineConfig.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_EngineConfig.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_tab_EngineConfig.Location = new System.Drawing.Point(0, 252);
+            this.btn_tab_EngineConfig.Name = "btn_tab_EngineConfig";
+            this.btn_tab_EngineConfig.ShadowDecoration.Parent = this.btn_tab_EngineConfig;
+            this.btn_tab_EngineConfig.Size = new System.Drawing.Size(308, 64);
+            this.btn_tab_EngineConfig.TabIndex = 7;
+            this.btn_tab_EngineConfig.Text = "Engine Config";
+            this.btn_tab_EngineConfig.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_EngineConfig.Click += new System.EventHandler(this.btn_tab_Click);
+            // 
+            // btn_tab_RankChanger
+            // 
+            this.btn_tab_RankChanger.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_tab_RankChanger.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_tab_RankChanger.CheckedState.Parent = this.btn_tab_RankChanger;
+            this.btn_tab_RankChanger.CustomImages.Parent = this.btn_tab_RankChanger;
+            this.btn_tab_RankChanger.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btn_tab_RankChanger.Font = new System.Drawing.Font("Impact", 20.25F);
+            this.btn_tab_RankChanger.ForeColor = System.Drawing.Color.White;
+            this.btn_tab_RankChanger.HoveredState.Parent = this.btn_tab_RankChanger;
+            this.btn_tab_RankChanger.Image = global::AestheticServicesMultiTool.Properties.Resources.IconRankChanger;
+            this.btn_tab_RankChanger.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_RankChanger.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_tab_RankChanger.Location = new System.Drawing.Point(0, 315);
+            this.btn_tab_RankChanger.Name = "btn_tab_RankChanger";
+            this.btn_tab_RankChanger.ShadowDecoration.Parent = this.btn_tab_RankChanger;
+            this.btn_tab_RankChanger.Size = new System.Drawing.Size(308, 64);
+            this.btn_tab_RankChanger.TabIndex = 7;
+            this.btn_tab_RankChanger.Text = "Rank Changer";
+            this.btn_tab_RankChanger.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_RankChanger.Click += new System.EventHandler(this.btn_tab_Click);
+            // 
+            // btn_tab_SaveInjector
+            // 
+            this.btn_tab_SaveInjector.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_tab_SaveInjector.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_tab_SaveInjector.CheckedState.Parent = this.btn_tab_SaveInjector;
+            this.btn_tab_SaveInjector.CustomImages.Parent = this.btn_tab_SaveInjector;
+            this.btn_tab_SaveInjector.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btn_tab_SaveInjector.Font = new System.Drawing.Font("Impact", 20.25F);
+            this.btn_tab_SaveInjector.ForeColor = System.Drawing.Color.White;
+            this.btn_tab_SaveInjector.HoveredState.Parent = this.btn_tab_SaveInjector;
+            this.btn_tab_SaveInjector.Image = global::AestheticServicesMultiTool.Properties.Resources.IconSaveInjector;
+            this.btn_tab_SaveInjector.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_SaveInjector.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_tab_SaveInjector.Location = new System.Drawing.Point(0, 378);
+            this.btn_tab_SaveInjector.Name = "btn_tab_SaveInjector";
+            this.btn_tab_SaveInjector.ShadowDecoration.Parent = this.btn_tab_SaveInjector;
+            this.btn_tab_SaveInjector.Size = new System.Drawing.Size(308, 64);
+            this.btn_tab_SaveInjector.TabIndex = 7;
+            this.btn_tab_SaveInjector.Text = "Save Injector";
+            this.btn_tab_SaveInjector.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_SaveInjector.Click += new System.EventHandler(this.btn_tab_Click);
+            // 
+            // btn_tab_SSLByPassInstall
+            // 
+            this.btn_tab_SSLByPassInstall.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_tab_SSLByPassInstall.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_tab_SSLByPassInstall.CheckedState.Parent = this.btn_tab_SSLByPassInstall;
+            this.btn_tab_SSLByPassInstall.CustomImages.Parent = this.btn_tab_SSLByPassInstall;
+            this.btn_tab_SSLByPassInstall.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btn_tab_SSLByPassInstall.Font = new System.Drawing.Font("Impact", 20.25F);
+            this.btn_tab_SSLByPassInstall.ForeColor = System.Drawing.Color.White;
+            this.btn_tab_SSLByPassInstall.HoveredState.Parent = this.btn_tab_SSLByPassInstall;
+            this.btn_tab_SSLByPassInstall.Image = global::AestheticServicesMultiTool.Properties.Resources.IconSSLByPass;
+            this.btn_tab_SSLByPassInstall.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_SSLByPassInstall.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_tab_SSLByPassInstall.Location = new System.Drawing.Point(0, 441);
+            this.btn_tab_SSLByPassInstall.Name = "btn_tab_SSLByPassInstall";
+            this.btn_tab_SSLByPassInstall.ShadowDecoration.Parent = this.btn_tab_SSLByPassInstall;
+            this.btn_tab_SSLByPassInstall.Size = new System.Drawing.Size(308, 64);
+            this.btn_tab_SSLByPassInstall.TabIndex = 7;
+            this.btn_tab_SSLByPassInstall.Text = "SSL ByPass Install";
+            this.btn_tab_SSLByPassInstall.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_SSLByPassInstall.Click += new System.EventHandler(this.btn_tab_Click);
+            // 
+            // btn_tab_SkillCheckBot
+            // 
+            this.btn_tab_SkillCheckBot.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_tab_SkillCheckBot.Checked = true;
+            this.btn_tab_SkillCheckBot.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_tab_SkillCheckBot.CheckedState.Parent = this.btn_tab_SkillCheckBot;
+            this.btn_tab_SkillCheckBot.CustomImages.Parent = this.btn_tab_SkillCheckBot;
+            this.btn_tab_SkillCheckBot.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btn_tab_SkillCheckBot.Font = new System.Drawing.Font("Impact", 20.25F);
+            this.btn_tab_SkillCheckBot.ForeColor = System.Drawing.Color.White;
+            this.btn_tab_SkillCheckBot.HoveredState.Parent = this.btn_tab_SkillCheckBot;
+            this.btn_tab_SkillCheckBot.Image = global::AestheticServicesMultiTool.Properties.Resources.SkillCheckIcon;
+            this.btn_tab_SkillCheckBot.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_SkillCheckBot.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_tab_SkillCheckBot.Location = new System.Drawing.Point(0, 0);
+            this.btn_tab_SkillCheckBot.Name = "btn_tab_SkillCheckBot";
+            this.btn_tab_SkillCheckBot.ShadowDecoration.Parent = this.btn_tab_SkillCheckBot;
+            this.btn_tab_SkillCheckBot.Size = new System.Drawing.Size(308, 64);
+            this.btn_tab_SkillCheckBot.TabIndex = 7;
+            this.btn_tab_SkillCheckBot.Text = "SkillCheckBot";
+            this.btn_tab_SkillCheckBot.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_tab_SkillCheckBot.Click += new System.EventHandler(this.btn_tab_Click);
             // 
             // pnl_Main
             // 
@@ -970,6 +1149,29 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "tabPage7";
             // 
+            // tb_si_CustomPath
+            // 
+            this.tb_si_CustomPath.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_si_CustomPath.DefaultText = "Path";
+            this.tb_si_CustomPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb_si_CustomPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb_si_CustomPath.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_si_CustomPath.DisabledState.Parent = this.tb_si_CustomPath;
+            this.tb_si_CustomPath.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_si_CustomPath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_si_CustomPath.FocusedState.Parent = this.tb_si_CustomPath;
+            this.tb_si_CustomPath.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_si_CustomPath.HoveredState.Parent = this.tb_si_CustomPath;
+            this.tb_si_CustomPath.Location = new System.Drawing.Point(18, 273);
+            this.tb_si_CustomPath.Name = "tb_si_CustomPath";
+            this.tb_si_CustomPath.PasswordChar = '\0';
+            this.tb_si_CustomPath.PlaceholderText = "";
+            this.tb_si_CustomPath.ReadOnly = true;
+            this.tb_si_CustomPath.SelectedText = "";
+            this.tb_si_CustomPath.ShadowDecoration.Parent = this.tb_si_CustomPath;
+            this.tb_si_CustomPath.Size = new System.Drawing.Size(335, 17);
+            this.tb_si_CustomPath.TabIndex = 6;
+            // 
             // picbox_si_VisibleID
             // 
             this.picbox_si_VisibleID.Image = global::AestheticServicesMultiTool.Properties.Resources.VisibleIcon;
@@ -993,6 +1195,87 @@
             this.tb_si_UserID.Size = new System.Drawing.Size(297, 33);
             this.tb_si_UserID.TabIndex = 4;
             this.tb_si_UserID.Text = "123456789";
+            // 
+            // btn_si_InjectWithoutLegacy
+            // 
+            this.btn_si_InjectWithoutLegacy.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
+            this.btn_si_InjectWithoutLegacy.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
+            this.btn_si_InjectWithoutLegacy.BackColor = System.Drawing.Color.Transparent;
+            this.btn_si_InjectWithoutLegacy.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_si_InjectWithoutLegacy.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_si_InjectWithoutLegacy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btn_si_InjectWithoutLegacy.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
+            this.btn_si_InjectWithoutLegacy.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            this.btn_si_InjectWithoutLegacy.Location = new System.Drawing.Point(187, 172);
+            this.btn_si_InjectWithoutLegacy.Name = "btn_si_InjectWithoutLegacy";
+            this.btn_si_InjectWithoutLegacy.Radius = 15;
+            this.btn_si_InjectWithoutLegacy.Size = new System.Drawing.Size(166, 58);
+            this.btn_si_InjectWithoutLegacy.Stroke = false;
+            this.btn_si_InjectWithoutLegacy.StrokeColor = System.Drawing.Color.Gray;
+            this.btn_si_InjectWithoutLegacy.TabIndex = 3;
+            this.btn_si_InjectWithoutLegacy.Text = "Without Legacy";
+            this.btn_si_InjectWithoutLegacy.Transparency = false;
+            // 
+            // btn_si_CustomInject
+            // 
+            this.btn_si_CustomInject.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
+            this.btn_si_CustomInject.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
+            this.btn_si_CustomInject.BackColor = System.Drawing.Color.Transparent;
+            this.btn_si_CustomInject.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_si_CustomInject.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_si_CustomInject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btn_si_CustomInject.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
+            this.btn_si_CustomInject.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            this.btn_si_CustomInject.Location = new System.Drawing.Point(174, 296);
+            this.btn_si_CustomInject.Name = "btn_si_CustomInject";
+            this.btn_si_CustomInject.Radius = 15;
+            this.btn_si_CustomInject.Size = new System.Drawing.Size(182, 30);
+            this.btn_si_CustomInject.Stroke = false;
+            this.btn_si_CustomInject.StrokeColor = System.Drawing.Color.Gray;
+            this.btn_si_CustomInject.TabIndex = 3;
+            this.btn_si_CustomInject.Text = "Inject Custom";
+            this.btn_si_CustomInject.Transparency = false;
+            // 
+            // btn_si_CustomAdd
+            // 
+            this.btn_si_CustomAdd.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
+            this.btn_si_CustomAdd.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
+            this.btn_si_CustomAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btn_si_CustomAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_si_CustomAdd.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_si_CustomAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btn_si_CustomAdd.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
+            this.btn_si_CustomAdd.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            this.btn_si_CustomAdd.Location = new System.Drawing.Point(14, 296);
+            this.btn_si_CustomAdd.Name = "btn_si_CustomAdd";
+            this.btn_si_CustomAdd.Radius = 15;
+            this.btn_si_CustomAdd.Size = new System.Drawing.Size(156, 30);
+            this.btn_si_CustomAdd.Stroke = false;
+            this.btn_si_CustomAdd.StrokeColor = System.Drawing.Color.Gray;
+            this.btn_si_CustomAdd.TabIndex = 3;
+            this.btn_si_CustomAdd.Text = "Add custom";
+            this.btn_si_CustomAdd.Transparency = false;
+            this.btn_si_CustomAdd.Click += new System.EventHandler(this.btn_si_CustomAdd_Click);
+            // 
+            // btn_si_InjectWithLegacy
+            // 
+            this.btn_si_InjectWithLegacy.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
+            this.btn_si_InjectWithLegacy.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
+            this.btn_si_InjectWithLegacy.BackColor = System.Drawing.Color.Transparent;
+            this.btn_si_InjectWithLegacy.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_si_InjectWithLegacy.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_si_InjectWithLegacy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btn_si_InjectWithLegacy.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
+            this.btn_si_InjectWithLegacy.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            this.btn_si_InjectWithLegacy.Location = new System.Drawing.Point(15, 172);
+            this.btn_si_InjectWithLegacy.Name = "btn_si_InjectWithLegacy";
+            this.btn_si_InjectWithLegacy.Radius = 15;
+            this.btn_si_InjectWithLegacy.Size = new System.Drawing.Size(166, 58);
+            this.btn_si_InjectWithLegacy.Stroke = false;
+            this.btn_si_InjectWithLegacy.StrokeColor = System.Drawing.Color.Gray;
+            this.btn_si_InjectWithLegacy.TabIndex = 3;
+            this.btn_si_InjectWithLegacy.Text = "With Legacy";
+            this.btn_si_InjectWithLegacy.Transparency = false;
             // 
             // btn_si_GetUserID
             // 
@@ -1046,297 +1329,25 @@
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "tabPage8";
             // 
-            // lbl_Tittle
+            // btn_sbi_Remove
             // 
-            this.lbl_Tittle.AutoSize = true;
-            this.lbl_Tittle.Font = new System.Drawing.Font("Impact", 20.25F);
-            this.lbl_Tittle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.lbl_Tittle.Location = new System.Drawing.Point(314, 43);
-            this.lbl_Tittle.Name = "lbl_Tittle";
-            this.lbl_Tittle.Size = new System.Drawing.Size(169, 34);
-            this.lbl_Tittle.TabIndex = 0;
-            this.lbl_Tittle.Text = "SkillCheckBot";
-            // 
-            // btn_si_InjectWithLegacy
-            // 
-            this.btn_si_InjectWithLegacy.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
-            this.btn_si_InjectWithLegacy.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
-            this.btn_si_InjectWithLegacy.BackColor = System.Drawing.Color.Transparent;
-            this.btn_si_InjectWithLegacy.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn_si_InjectWithLegacy.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_si_InjectWithLegacy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.btn_si_InjectWithLegacy.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
-            this.btn_si_InjectWithLegacy.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
-            this.btn_si_InjectWithLegacy.Location = new System.Drawing.Point(15, 172);
-            this.btn_si_InjectWithLegacy.Name = "btn_si_InjectWithLegacy";
-            this.btn_si_InjectWithLegacy.Radius = 15;
-            this.btn_si_InjectWithLegacy.Size = new System.Drawing.Size(166, 58);
-            this.btn_si_InjectWithLegacy.Stroke = false;
-            this.btn_si_InjectWithLegacy.StrokeColor = System.Drawing.Color.Gray;
-            this.btn_si_InjectWithLegacy.TabIndex = 3;
-            this.btn_si_InjectWithLegacy.Text = "With Legacy";
-            this.btn_si_InjectWithLegacy.Transparency = false;
-            // 
-            // btn_si_InjectWithoutLegacy
-            // 
-            this.btn_si_InjectWithoutLegacy.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
-            this.btn_si_InjectWithoutLegacy.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
-            this.btn_si_InjectWithoutLegacy.BackColor = System.Drawing.Color.Transparent;
-            this.btn_si_InjectWithoutLegacy.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn_si_InjectWithoutLegacy.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_si_InjectWithoutLegacy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.btn_si_InjectWithoutLegacy.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
-            this.btn_si_InjectWithoutLegacy.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
-            this.btn_si_InjectWithoutLegacy.Location = new System.Drawing.Point(187, 172);
-            this.btn_si_InjectWithoutLegacy.Name = "btn_si_InjectWithoutLegacy";
-            this.btn_si_InjectWithoutLegacy.Radius = 15;
-            this.btn_si_InjectWithoutLegacy.Size = new System.Drawing.Size(166, 58);
-            this.btn_si_InjectWithoutLegacy.Stroke = false;
-            this.btn_si_InjectWithoutLegacy.StrokeColor = System.Drawing.Color.Gray;
-            this.btn_si_InjectWithoutLegacy.TabIndex = 3;
-            this.btn_si_InjectWithoutLegacy.Text = "Without Legacy";
-            this.btn_si_InjectWithoutLegacy.Transparency = false;
-            // 
-            // tb_si_CustomPath
-            // 
-            this.tb_si_CustomPath.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_si_CustomPath.DefaultText = "Path";
-            this.tb_si_CustomPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tb_si_CustomPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tb_si_CustomPath.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb_si_CustomPath.DisabledState.Parent = this.tb_si_CustomPath;
-            this.tb_si_CustomPath.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tb_si_CustomPath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_si_CustomPath.FocusedState.Parent = this.tb_si_CustomPath;
-            this.tb_si_CustomPath.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_si_CustomPath.HoveredState.Parent = this.tb_si_CustomPath;
-            this.tb_si_CustomPath.Location = new System.Drawing.Point(18, 273);
-            this.tb_si_CustomPath.Name = "tb_si_CustomPath";
-            this.tb_si_CustomPath.PasswordChar = '\0';
-            this.tb_si_CustomPath.PlaceholderText = "";
-            this.tb_si_CustomPath.ReadOnly = true;
-            this.tb_si_CustomPath.SelectedText = "";
-            this.tb_si_CustomPath.ShadowDecoration.Parent = this.tb_si_CustomPath;
-            this.tb_si_CustomPath.Size = new System.Drawing.Size(335, 17);
-            this.tb_si_CustomPath.TabIndex = 6;
-            // 
-            // btn_si_CustomAdd
-            // 
-            this.btn_si_CustomAdd.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
-            this.btn_si_CustomAdd.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
-            this.btn_si_CustomAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btn_si_CustomAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn_si_CustomAdd.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_si_CustomAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.btn_si_CustomAdd.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
-            this.btn_si_CustomAdd.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
-            this.btn_si_CustomAdd.Location = new System.Drawing.Point(14, 296);
-            this.btn_si_CustomAdd.Name = "btn_si_CustomAdd";
-            this.btn_si_CustomAdd.Radius = 15;
-            this.btn_si_CustomAdd.Size = new System.Drawing.Size(156, 30);
-            this.btn_si_CustomAdd.Stroke = false;
-            this.btn_si_CustomAdd.StrokeColor = System.Drawing.Color.Gray;
-            this.btn_si_CustomAdd.TabIndex = 3;
-            this.btn_si_CustomAdd.Text = "Add custom";
-            this.btn_si_CustomAdd.Transparency = false;
-            this.btn_si_CustomAdd.Click += new System.EventHandler(this.btn_si_CustomAdd_Click);
-            // 
-            // btn_si_CustomInject
-            // 
-            this.btn_si_CustomInject.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
-            this.btn_si_CustomInject.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
-            this.btn_si_CustomInject.BackColor = System.Drawing.Color.Transparent;
-            this.btn_si_CustomInject.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn_si_CustomInject.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_si_CustomInject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.btn_si_CustomInject.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
-            this.btn_si_CustomInject.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
-            this.btn_si_CustomInject.Location = new System.Drawing.Point(174, 296);
-            this.btn_si_CustomInject.Name = "btn_si_CustomInject";
-            this.btn_si_CustomInject.Radius = 15;
-            this.btn_si_CustomInject.Size = new System.Drawing.Size(182, 30);
-            this.btn_si_CustomInject.Stroke = false;
-            this.btn_si_CustomInject.StrokeColor = System.Drawing.Color.Gray;
-            this.btn_si_CustomInject.TabIndex = 3;
-            this.btn_si_CustomInject.Text = "Inject Custom";
-            this.btn_si_CustomInject.Transparency = false;
-            // 
-            // btn_tab_SkillCheckBot
-            // 
-            this.btn_tab_SkillCheckBot.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_tab_SkillCheckBot.Checked = true;
-            this.btn_tab_SkillCheckBot.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_tab_SkillCheckBot.CheckedState.Parent = this.btn_tab_SkillCheckBot;
-            this.btn_tab_SkillCheckBot.CustomImages.Parent = this.btn_tab_SkillCheckBot;
-            this.btn_tab_SkillCheckBot.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btn_tab_SkillCheckBot.Font = new System.Drawing.Font("Impact", 20.25F);
-            this.btn_tab_SkillCheckBot.ForeColor = System.Drawing.Color.White;
-            this.btn_tab_SkillCheckBot.HoveredState.Parent = this.btn_tab_SkillCheckBot;
-            this.btn_tab_SkillCheckBot.Image = global::AestheticServicesMultiTool.Properties.Resources.SkillCheckIcon;
-            this.btn_tab_SkillCheckBot.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_SkillCheckBot.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_tab_SkillCheckBot.Location = new System.Drawing.Point(0, 0);
-            this.btn_tab_SkillCheckBot.Name = "btn_tab_SkillCheckBot";
-            this.btn_tab_SkillCheckBot.ShadowDecoration.Parent = this.btn_tab_SkillCheckBot;
-            this.btn_tab_SkillCheckBot.Size = new System.Drawing.Size(308, 64);
-            this.btn_tab_SkillCheckBot.TabIndex = 7;
-            this.btn_tab_SkillCheckBot.Text = "SkillCheckBot";
-            this.btn_tab_SkillCheckBot.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_SkillCheckBot.Click += new System.EventHandler(this.btn_tab_Click);
-            // 
-            // btn_tab_CookieGrabber
-            // 
-            this.btn_tab_CookieGrabber.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_tab_CookieGrabber.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_tab_CookieGrabber.CheckedState.Parent = this.btn_tab_CookieGrabber;
-            this.btn_tab_CookieGrabber.CustomImages.Parent = this.btn_tab_CookieGrabber;
-            this.btn_tab_CookieGrabber.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btn_tab_CookieGrabber.Font = new System.Drawing.Font("Impact", 20.25F);
-            this.btn_tab_CookieGrabber.ForeColor = System.Drawing.Color.White;
-            this.btn_tab_CookieGrabber.HoveredState.Parent = this.btn_tab_CookieGrabber;
-            this.btn_tab_CookieGrabber.Image = global::AestheticServicesMultiTool.Properties.Resources.IconCookieGrabber;
-            this.btn_tab_CookieGrabber.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_CookieGrabber.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_tab_CookieGrabber.Location = new System.Drawing.Point(0, 63);
-            this.btn_tab_CookieGrabber.Name = "btn_tab_CookieGrabber";
-            this.btn_tab_CookieGrabber.ShadowDecoration.Parent = this.btn_tab_CookieGrabber;
-            this.btn_tab_CookieGrabber.Size = new System.Drawing.Size(308, 64);
-            this.btn_tab_CookieGrabber.TabIndex = 7;
-            this.btn_tab_CookieGrabber.Text = "Cookie Grabber";
-            this.btn_tab_CookieGrabber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_CookieGrabber.Click += new System.EventHandler(this.btn_tab_Click);
-            // 
-            // btn_tab_FiddlerMarket
-            // 
-            this.btn_tab_FiddlerMarket.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_tab_FiddlerMarket.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_tab_FiddlerMarket.CheckedState.Parent = this.btn_tab_FiddlerMarket;
-            this.btn_tab_FiddlerMarket.CustomImages.Parent = this.btn_tab_FiddlerMarket;
-            this.btn_tab_FiddlerMarket.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btn_tab_FiddlerMarket.Font = new System.Drawing.Font("Impact", 20.25F);
-            this.btn_tab_FiddlerMarket.ForeColor = System.Drawing.Color.White;
-            this.btn_tab_FiddlerMarket.HoveredState.Parent = this.btn_tab_FiddlerMarket;
-            this.btn_tab_FiddlerMarket.Image = global::AestheticServicesMultiTool.Properties.Resources.IconFiddler;
-            this.btn_tab_FiddlerMarket.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_FiddlerMarket.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_tab_FiddlerMarket.Location = new System.Drawing.Point(0, 126);
-            this.btn_tab_FiddlerMarket.Name = "btn_tab_FiddlerMarket";
-            this.btn_tab_FiddlerMarket.ShadowDecoration.Parent = this.btn_tab_FiddlerMarket;
-            this.btn_tab_FiddlerMarket.Size = new System.Drawing.Size(308, 64);
-            this.btn_tab_FiddlerMarket.TabIndex = 7;
-            this.btn_tab_FiddlerMarket.Text = "Temp Unlocker";
-            this.btn_tab_FiddlerMarket.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_FiddlerMarket.Click += new System.EventHandler(this.btn_tab_Click);
-            // 
-            // btn_tab_BloodPointModify
-            // 
-            this.btn_tab_BloodPointModify.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_tab_BloodPointModify.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_tab_BloodPointModify.CheckedState.Parent = this.btn_tab_BloodPointModify;
-            this.btn_tab_BloodPointModify.CustomImages.Parent = this.btn_tab_BloodPointModify;
-            this.btn_tab_BloodPointModify.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btn_tab_BloodPointModify.Font = new System.Drawing.Font("Impact", 20.25F);
-            this.btn_tab_BloodPointModify.ForeColor = System.Drawing.Color.White;
-            this.btn_tab_BloodPointModify.HoveredState.Parent = this.btn_tab_BloodPointModify;
-            this.btn_tab_BloodPointModify.Image = global::AestheticServicesMultiTool.Properties.Resources.IconBloodPoint;
-            this.btn_tab_BloodPointModify.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_BloodPointModify.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_tab_BloodPointModify.Location = new System.Drawing.Point(0, 189);
-            this.btn_tab_BloodPointModify.Name = "btn_tab_BloodPointModify";
-            this.btn_tab_BloodPointModify.ShadowDecoration.Parent = this.btn_tab_BloodPointModify;
-            this.btn_tab_BloodPointModify.Size = new System.Drawing.Size(308, 64);
-            this.btn_tab_BloodPointModify.TabIndex = 7;
-            this.btn_tab_BloodPointModify.Text = "BloodPoint Modify";
-            this.btn_tab_BloodPointModify.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_BloodPointModify.Click += new System.EventHandler(this.btn_tab_Click);
-            // 
-            // btn_tab_EngineConfig
-            // 
-            this.btn_tab_EngineConfig.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_tab_EngineConfig.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_tab_EngineConfig.CheckedState.Parent = this.btn_tab_EngineConfig;
-            this.btn_tab_EngineConfig.CustomImages.Parent = this.btn_tab_EngineConfig;
-            this.btn_tab_EngineConfig.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btn_tab_EngineConfig.Font = new System.Drawing.Font("Impact", 20.25F);
-            this.btn_tab_EngineConfig.ForeColor = System.Drawing.Color.White;
-            this.btn_tab_EngineConfig.HoveredState.Parent = this.btn_tab_EngineConfig;
-            this.btn_tab_EngineConfig.Image = global::AestheticServicesMultiTool.Properties.Resources.IconEngineConfig;
-            this.btn_tab_EngineConfig.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_EngineConfig.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_tab_EngineConfig.Location = new System.Drawing.Point(0, 252);
-            this.btn_tab_EngineConfig.Name = "btn_tab_EngineConfig";
-            this.btn_tab_EngineConfig.ShadowDecoration.Parent = this.btn_tab_EngineConfig;
-            this.btn_tab_EngineConfig.Size = new System.Drawing.Size(308, 64);
-            this.btn_tab_EngineConfig.TabIndex = 7;
-            this.btn_tab_EngineConfig.Text = "Engine Config";
-            this.btn_tab_EngineConfig.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_EngineConfig.Click += new System.EventHandler(this.btn_tab_Click);
-            // 
-            // btn_tab_RankChanger
-            // 
-            this.btn_tab_RankChanger.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_tab_RankChanger.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_tab_RankChanger.CheckedState.Parent = this.btn_tab_RankChanger;
-            this.btn_tab_RankChanger.CustomImages.Parent = this.btn_tab_RankChanger;
-            this.btn_tab_RankChanger.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btn_tab_RankChanger.Font = new System.Drawing.Font("Impact", 20.25F);
-            this.btn_tab_RankChanger.ForeColor = System.Drawing.Color.White;
-            this.btn_tab_RankChanger.HoveredState.Parent = this.btn_tab_RankChanger;
-            this.btn_tab_RankChanger.Image = global::AestheticServicesMultiTool.Properties.Resources.IconRankChanger;
-            this.btn_tab_RankChanger.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_RankChanger.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_tab_RankChanger.Location = new System.Drawing.Point(0, 315);
-            this.btn_tab_RankChanger.Name = "btn_tab_RankChanger";
-            this.btn_tab_RankChanger.ShadowDecoration.Parent = this.btn_tab_RankChanger;
-            this.btn_tab_RankChanger.Size = new System.Drawing.Size(308, 64);
-            this.btn_tab_RankChanger.TabIndex = 7;
-            this.btn_tab_RankChanger.Text = "Rank Changer";
-            this.btn_tab_RankChanger.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_RankChanger.Click += new System.EventHandler(this.btn_tab_Click);
-            // 
-            // btn_tab_SaveInjector
-            // 
-            this.btn_tab_SaveInjector.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_tab_SaveInjector.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_tab_SaveInjector.CheckedState.Parent = this.btn_tab_SaveInjector;
-            this.btn_tab_SaveInjector.CustomImages.Parent = this.btn_tab_SaveInjector;
-            this.btn_tab_SaveInjector.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btn_tab_SaveInjector.Font = new System.Drawing.Font("Impact", 20.25F);
-            this.btn_tab_SaveInjector.ForeColor = System.Drawing.Color.White;
-            this.btn_tab_SaveInjector.HoveredState.Parent = this.btn_tab_SaveInjector;
-            this.btn_tab_SaveInjector.Image = global::AestheticServicesMultiTool.Properties.Resources.IconSaveInjector;
-            this.btn_tab_SaveInjector.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_SaveInjector.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_tab_SaveInjector.Location = new System.Drawing.Point(0, 378);
-            this.btn_tab_SaveInjector.Name = "btn_tab_SaveInjector";
-            this.btn_tab_SaveInjector.ShadowDecoration.Parent = this.btn_tab_SaveInjector;
-            this.btn_tab_SaveInjector.Size = new System.Drawing.Size(308, 64);
-            this.btn_tab_SaveInjector.TabIndex = 7;
-            this.btn_tab_SaveInjector.Text = "Save Injector";
-            this.btn_tab_SaveInjector.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_SaveInjector.Click += new System.EventHandler(this.btn_tab_Click);
-            // 
-            // btn_tab_SSLByPassInstall
-            // 
-            this.btn_tab_SSLByPassInstall.ButtonMode = Siticone.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_tab_SSLByPassInstall.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_tab_SSLByPassInstall.CheckedState.Parent = this.btn_tab_SSLByPassInstall;
-            this.btn_tab_SSLByPassInstall.CustomImages.Parent = this.btn_tab_SSLByPassInstall;
-            this.btn_tab_SSLByPassInstall.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btn_tab_SSLByPassInstall.Font = new System.Drawing.Font("Impact", 20.25F);
-            this.btn_tab_SSLByPassInstall.ForeColor = System.Drawing.Color.White;
-            this.btn_tab_SSLByPassInstall.HoveredState.Parent = this.btn_tab_SSLByPassInstall;
-            this.btn_tab_SSLByPassInstall.Image = global::AestheticServicesMultiTool.Properties.Resources.IconSSLByPass;
-            this.btn_tab_SSLByPassInstall.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_SSLByPassInstall.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_tab_SSLByPassInstall.Location = new System.Drawing.Point(0, 441);
-            this.btn_tab_SSLByPassInstall.Name = "btn_tab_SSLByPassInstall";
-            this.btn_tab_SSLByPassInstall.ShadowDecoration.Parent = this.btn_tab_SSLByPassInstall;
-            this.btn_tab_SSLByPassInstall.Size = new System.Drawing.Size(308, 64);
-            this.btn_tab_SSLByPassInstall.TabIndex = 7;
-            this.btn_tab_SSLByPassInstall.Text = "SSL ByPass Install";
-            this.btn_tab_SSLByPassInstall.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_tab_SSLByPassInstall.Click += new System.EventHandler(this.btn_tab_Click);
+            this.btn_sbi_Remove.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
+            this.btn_sbi_Remove.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
+            this.btn_sbi_Remove.BackColor = System.Drawing.Color.Transparent;
+            this.btn_sbi_Remove.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_sbi_Remove.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_sbi_Remove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btn_sbi_Remove.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
+            this.btn_sbi_Remove.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
+            this.btn_sbi_Remove.Location = new System.Drawing.Point(187, 11);
+            this.btn_sbi_Remove.Name = "btn_sbi_Remove";
+            this.btn_sbi_Remove.Radius = 15;
+            this.btn_sbi_Remove.Size = new System.Drawing.Size(170, 33);
+            this.btn_sbi_Remove.Stroke = false;
+            this.btn_sbi_Remove.StrokeColor = System.Drawing.Color.Gray;
+            this.btn_sbi_Remove.TabIndex = 4;
+            this.btn_sbi_Remove.Text = "Remove";
+            this.btn_sbi_Remove.Transparency = false;
             // 
             // btn_sbi_Install
             // 
@@ -1358,25 +1369,21 @@
             this.btn_sbi_Install.Text = "Install";
             this.btn_sbi_Install.Transparency = false;
             // 
-            // btn_sbi_Remove
+            // lbl_Tittle
             // 
-            this.btn_sbi_Remove.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(38)))), ((int)(((byte)(82)))));
-            this.btn_sbi_Remove.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(91)))), ((int)(((byte)(106)))));
-            this.btn_sbi_Remove.BackColor = System.Drawing.Color.Transparent;
-            this.btn_sbi_Remove.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn_sbi_Remove.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_sbi_Remove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.btn_sbi_Remove.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(18)))), ((int)(((byte)(62)))));
-            this.btn_sbi_Remove.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(71)))), ((int)(((byte)(86)))));
-            this.btn_sbi_Remove.Location = new System.Drawing.Point(187, 11);
-            this.btn_sbi_Remove.Name = "btn_sbi_Remove";
-            this.btn_sbi_Remove.Radius = 15;
-            this.btn_sbi_Remove.Size = new System.Drawing.Size(170, 33);
-            this.btn_sbi_Remove.Stroke = false;
-            this.btn_sbi_Remove.StrokeColor = System.Drawing.Color.Gray;
-            this.btn_sbi_Remove.TabIndex = 4;
-            this.btn_sbi_Remove.Text = "Remove";
-            this.btn_sbi_Remove.Transparency = false;
+            this.lbl_Tittle.AutoSize = true;
+            this.lbl_Tittle.Font = new System.Drawing.Font("Impact", 20.25F);
+            this.lbl_Tittle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.lbl_Tittle.Location = new System.Drawing.Point(314, 43);
+            this.lbl_Tittle.Name = "lbl_Tittle";
+            this.lbl_Tittle.Size = new System.Drawing.Size(169, 34);
+            this.lbl_Tittle.TabIndex = 0;
+            this.lbl_Tittle.Text = "SkillCheckBot";
+            // 
+            // CheckAccess
+            // 
+            this.CheckAccess.Interval = 600000;
+            this.CheckAccess.Tick += new System.EventHandler(this.CheckAccess_Tick);
             // 
             // FormMain
             // 
@@ -1507,5 +1514,6 @@
         private Siticone.UI.WinForms.SiticoneButton btn_tab_SSLByPassInstall;
         private AltoControls.AltoButton btn_sbi_Remove;
         private AltoControls.AltoButton btn_sbi_Install;
+        private System.Windows.Forms.Timer CheckAccess;
     }
 }
